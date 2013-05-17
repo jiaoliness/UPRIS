@@ -42,11 +42,8 @@ mail($to,$subject,$txt,$headers);*/
 
 if($_SERVER['REQUEST_METHOD']=='POST'){  login_class::login($_POST['email'],$_POST['password']); /*login function*/
  
-    if(login_class::is_logged_in()){
-        redirect_to_home();  /*after sucesfull login, redirects to profile*/
-    }
-    else{
-        echo "<p id=\"loginerror\">&nbspWrong Email or Password!</p>"; /*unsecesfull login displays error message*/
+    if(!login_class::is_logged_in()){
+           echo "<p id=\"loginerror\">&nbspWrong Email or Password!</p>"; /*unsecesfull login displays error message*/
     }
  
  }

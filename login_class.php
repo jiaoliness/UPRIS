@@ -1,4 +1,5 @@
 <?php
+require_once 'functions.php';
 require_once 'dbconnection.php';
 dbconnection::getConnection(); /*creates a connection to the database*/
 
@@ -17,10 +18,10 @@ class login_class {
  
 public static function login($email,$password){ /*function to login*/
   
-$result=mysql_query("SELECT userid,firstname,lastname,email FROM userinfo WHERE email='$email' AND password=MD5('$password')")or die(mysql_error());
-$result2=mysql_query("SELECT adminid,firstname,lastname FROM admininfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
-$result3=mysql_query("SELECT reviewerid,firstname,lastname FROM reviewerinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error()); 
-$result4=mysql_query("SELECT adviserid,firstname,lastname FROM adviserinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
+$result =mysql_query("SELECT userid,firstname,lastname,email FROM userinfo WHERE email='$email' AND password=MD5('$password')")or die(mysql_error());
+$result2=mysql_query("SELECT adminid,firstname,lastname,email FROM admininfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
+$result3=mysql_query("SELECT reviewerid,firstname,lastname,email FROM reviewerinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error()); 
+$result4=mysql_query("SELECT adviserid,firstname,lastname,email FROM adviserinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
 
 if(mysql_num_rows($result) == 1){ /*if a users login information is found in the database, sets the SESSION variables*/
         $row = mysql_fetch_assoc($result);
@@ -28,19 +29,19 @@ if(mysql_num_rows($result) == 1){ /*if a users login information is found in the
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
         
-        return true; /*for TDD test purposes, indicator of sucesful login*/
+      head(profile,""); 
 }
          
-else if (mysql_num_rows($result2) == 1){ /*if the user is an admin, sets the SESSION variables*/
+else if (mysql_num_rows($result2) == 1){
      $row = mysql_fetch_assoc($result2);
         $_SESSION['adminid'] = $row['adminid'];
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
-        return true;
-}
+       head(adminindex,""); 
+} 
 
 else if (mysql_num_rows($result3) == 1){ /*if the user is a reviewer, sets the SESSION variables*/
-     $row = mysql_fetch_assoc($result2);
+     $row = mysql_fetch_assoc($result3);
         $_SESSION['reviewerid'] = $row['reviewerid'];
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
@@ -48,7 +49,7 @@ else if (mysql_num_rows($result3) == 1){ /*if the user is a reviewer, sets the S
 }
 
 else if (mysql_num_rows($result4) == 1){ /*if the user is an adviser, sets the SESSION variables*/
-     $row = mysql_fetch_assoc($result2);
+     $row = mysql_fetch_assoc($result4);
         $_SESSION['adviserid'] = $row['adviserid'];
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
@@ -62,7 +63,7 @@ else{
 }
 }
 
-  public static function is_valid_user($u){ /*confirms if the userID or adminID is valid one*/
+  public static function is_valid_user($u){ /*confirms if the userID or adminID is a valid one*/
     
     $userid = mysql_real_escape_string($u);
     
@@ -93,10 +94,20 @@ else{
       else if(isset($_SESSION['risid'])) {
              $u=$_SESSION['risid']; 
       }
+      
+       else if(isset($_SESSION['reviewerid'])) {
+             $u=$_SESSION['reviewerid']; 
+      }
+      
+       else if(isset($_SESSION['adviserid'])) {
+             $u=$_SESSION['adviserid']; 
+      }
       else{
           return false;
-      }      
-    if((isset($_SESSION['risid']) OR isset($_SESSION['adminid'])) && self::is_valid_user($u)){
+      } 
+      
+      
+    if((isset($_SESSION['risid']) OR isset($_SESSION['adminid']) OR isset($_SESSION['reviewerid']) OR isset($_SESSION['adviserid']))){
         return true;
     }else{
         return false;

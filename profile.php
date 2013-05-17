@@ -68,10 +68,8 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
        </ul>
             
 <?php if($_SERVER['REQUEST_METHOD']=='POST'){  login_class::login($_POST['email'],$_POST['password']); 
- if(login_class::is_logged_in()){ /*reloads the apge after sucesful login*/
-     redirect_to_home();
- }
- else{
+ if(!login_class::is_logged_in())
+ {
      echo "<p id=\"loginerror\">&nbspWrong Email or Password!</p>"; /*else displays this message*/
  }
  
