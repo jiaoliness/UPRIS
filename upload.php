@@ -64,10 +64,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         $query2="INSERT INTO `proposals` VALUES(0,$user,'new',0, '$_POST[title]' ,now() , '$_POST[prop]','$_POST[field]','$_POST[time]','$_POST[budget]','$_POST[abs]','$newname' )";
         mysql_query($query2) or die(mysql_error());
         logdata(" created a new proposal - Title: ".$_POST['title'].", Field: ".$_POST['field'].", Expected Budget: ".$_POST['budget'],$user);
-    
-     $_POST['title'] = new proposal();
-     $_POST['title']->setTitle($_POST['title']);
-     head(profile,"");
+        head(profile,"");
 	;}
 
 

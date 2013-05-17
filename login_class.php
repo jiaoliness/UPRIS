@@ -15,12 +15,13 @@ class login_class {
         return self::$instance;
     }   
  
-public static function login($email,$password){ /*funtion to login*/
+public static function login($email,$password){ /*function to login*/
   
 $result=mysql_query("SELECT userid,firstname,lastname,email FROM userinfo WHERE email='$email' AND password=MD5('$password')")or die(mysql_error());
 $result2=mysql_query("SELECT adminid,firstname,lastname FROM admininfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
 $result3=mysql_query("SELECT reviewerid,firstname,lastname FROM reviewerinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error()); 
-$result4=mysql_query("SELECT adminid,firstname,lastname FROM adviserinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
+$result4=mysql_query("SELECT adviserid,firstname,lastname FROM adviserinfo WHERE email='$email' AND password=MD5('$password')") or die(mysql_error());
+
 if(mysql_num_rows($result) == 1){ /*if a users login information is found in the database, sets the SESSION variables*/
         $row = mysql_fetch_assoc($result);
         $_SESSION['risid'] = $row['userid'];
@@ -37,6 +38,24 @@ else if (mysql_num_rows($result2) == 1){ /*if the user is an admin, sets the SES
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
         return true;
 }
+
+else if (mysql_num_rows($result3) == 1){ /*if the user is a reviewer, sets the SESSION variables*/
+     $row = mysql_fetch_assoc($result2);
+        $_SESSION['reviewerid'] = $row['reviewerid'];
+        $_SESSION['email'] = $email;
+        $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
+        return true;
+}
+
+else if (mysql_num_rows($result4) == 1){ /*if the user is an adviser, sets the SESSION variables*/
+     $row = mysql_fetch_assoc($result2);
+        $_SESSION['adviserid'] = $row['adviserid'];
+        $_SESSION['email'] = $email;
+        $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
+        return true;
+}
+
+
 else{
           
           return false; /*for TDD test purposes, indicator of unsucesful login*/
@@ -46,14 +65,21 @@ else{
   public static function is_valid_user($u){ /*confirms if the userID or adminID is valid one*/
     
     $userid = mysql_real_escape_string($u);
+    
     $query = "SELECT firstname FROM userinfo WHERE userid=$userid";
     $result = mysql_query($query) or die(mysql_error());
 
     $query2 = "SELECT firstname FROM admininfo WHERE adminid=$userid";
     $result2 = mysql_query($query2) or die(mysql_error());
+    
+     $query3 = "SELECT firstname FROM reviewerinfo WHERE reviewerid=$userid";
+    $result3 = mysql_query($query3) or die(mysql_error());
+    
+     $query4 = "SELECT firstname FROM adviserinfo WHERE adviserid=$userid";
+    $result4 = mysql_query($query4) or die(mysql_error());
 
     
-    if(mysql_num_rows($result) == 1 OR mysql_num_rows($result2) == 1){
+    if(mysql_num_rows($result) == 1 OR mysql_num_rows($result2) == 1 OR mysql_num_rows($result3) == 1 OR mysql_num_rows($result4) == 1){
         return true;
     }else{
         return false;
