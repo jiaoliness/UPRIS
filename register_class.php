@@ -13,13 +13,15 @@ class register_class {
         return self::$instance;
     }    
 
-public static function register($f,$l,$e,$p,$p2,$field,$i){  /*sign-up function, inserts user information into the database*/      
+public static function register($usertype,$f,$l,$e,$p,$p2,$field,$i,$r){  /*sign-up function, inserts user information into the database*/      
 $firstname = ucwords(strtolower(filter_var($f,FILTER_SANITIZE_STRING)));
 $lastname = ucwords(strtolower(filter_var($l,FILTER_SANITIZE_STRING)));
 $password = filter_var($p,FILTER_SANITIZE_STRING);  
 $password2 = filter_var($p2,FILTER_SANITIZE_STRING); 
 $email = filter_var($e,FILTER_VALIDATE_EMAIL);    
-$institute = ucwords(strtolower(filter_var($i,FILTER_SANITIZE_STRING))); 
+$institute = ucwords(strtolower(filter_var($i,FILTER_SANITIZE_STRING)));
+$regno = filter_var($r,FILTER_VALIDATE_INT); 
+
  if(preg_match('/^[a-zA-Z ]{3,30}$/', $firstname )) { }  /*checks for valid input, otherwise displays error*/
  else {
  	echo  "<p id=\"error\">&nbsp&nbspInvalid first name!</p>" ;
@@ -59,11 +61,26 @@ $institute = ucwords(strtolower(filter_var($i,FILTER_SANITIZE_STRING)));
  	echo  "<p id=\"error\">&nbsp&nbspInvalid Institute!</p>" ;
  return false;
   } 
+   if(preg_match('/^[\d]{4,30}$/', $regno)) {}
+ else {
+ 	echo  "<p id=\"error\">&nbsp&nbspInvalid Registration #!</p>" ;
+ return false;
+  }
   
-		
-mysql_query("INSERT INTO userinfo VALUES(0,'$email','$firstname','$lastname',MD5('$password'),'$field','$institute')") or die("Error in register:".mysql_error());	
+if($usertype=='user'){
+    $table='userinfo';
+}
+else if($usertype=='reviewer'){
+    $table='reviewerinfo';
+}
+else if($usertype=='adviser'){
+    $table='adviserinfo';
+}
+
+
+mysql_query("INSERT INTO $table VALUES(0,'$email','$firstname','$lastname',MD5('$password'),'$field','$institute')") or die("Error in register:".mysql_error());	
                 
-logdata( " registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
+logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
 
 sleep(1);
 

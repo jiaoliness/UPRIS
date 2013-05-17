@@ -25,10 +25,10 @@ top("sign-up"); ?>
    <?php
  if($_SERVER['REQUEST_METHOD']=='POST'){
           
-     register_class::register(trim($_POST['firstname']), /*register function, with parameters from submitted form*/
+     register_class::register($_POST['usertype'],trim($_POST['firstname']), /*register function, with parameters from submitted form*/
          trim($_POST['lastname']),  trim($_POST['email']),
          trim($_POST['password']), trim($_POST['password2']),
-         ($_POST['field']),trim($_POST['ins'])); 
+         ($_POST['field']),trim($_POST['ins']),trim($_POST['number'])); 
      
      if(login_class::is_logged_in()){redirect_to_home();}
      
@@ -38,6 +38,8 @@ top("sign-up"); ?>
      $pass=trim($_POST['password']);
       $dbValue=($_POST['field']);
        $ins=trim($_POST['ins']);
+       $num=trim($_POST['number']);
+       $type=$_POST['usertype'];
  }
     ?> 
 <h1>registration form</h1>
@@ -73,8 +75,9 @@ top("sign-up"); ?>
                  <ul>
                      
                      <li><select name="usertype">
-<option name="usertype" value="reviwer">Reviewer</option> 
-<option name="usertype" value="user">Researcher</option>
+<option name="usertype" value="user" <?php if(isset($type)){echo $type=="user"? 'selected="selected"' : ""; }?>>Researcher</option>
+<option name="usertype" value="reviewer" <?php if(isset($type)){echo $type=="reviewer"? 'selected="selected"' : ""; }?>>Reviewer</option> 
+<option name="usertype" value="adviser" <?php if(isset($type)){echo $type=="adviser"? 'selected="selected"' : ""; }?>>Adviser</option> 
   </select></li>
                      <li><input name="firstname" required="required" <?if(isset($fname)){echo "value=\"$fname\"";}else{echo "autofocus=\"autofocus\"";}?>/> </li> 
                      <li><input name="lastname" required="required"<?if(isset($lname)){echo "value=\"$lname\"";}?>/></li>

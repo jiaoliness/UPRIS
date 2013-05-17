@@ -311,13 +311,14 @@ ul	{list-style-type:none;}
 	}
 
 #bodyLeftPan ul{	
-	width:410px; 
+	width:auto; 
 	margin:10px 0 0;
 	}
 	
 #bodyLeftPan ul li{
 	width:auto; 
 	height:20px;
+      margin: 0px;
 	}
 	
 #bodyLeftPan ul li a{	
@@ -865,3 +866,5 @@ body h1{
             width: 500px;
             height:  auto;
         }
+     
+        

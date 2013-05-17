@@ -21,7 +21,7 @@ class proposal_class{
 
 public static function view_proposals($sesid,$filter){
     
-$query2= mysql_query("SELECT * FROM `proposals`  WHERE proponentid = $sesid && $filter ORDER BY proposalid DESC") or  die(mysql_error()); /*query the users unpaid loans*/
+$query2= mysql_query("SELECT * FROM `proposals`  WHERE proponentid = $sesid && status = $filter ORDER BY proposalid DESC") or  die(mysql_error()); /*query the users unpaid loans*/
 if(mysql_num_rows($query2)){  
     
  echo '<table border="1">';    
