@@ -48,6 +48,8 @@ top("sign-up"); ?>
       <div id="nameonePan">
   
         	<ul>
+                    <li><label for="usertype">What are you?   </label> 
+               	   </li>
         	   <li><label for="firstname">First Name:   </label> 
                	   </li>
         	   <li><label for="lastname">Last Name:   </label> 
@@ -62,11 +64,18 @@ top("sign-up"); ?>
         	   </li>
         	   <li><label for="ins">Institute:</label>  
         	   </li>
+                    <li><label for="number">Registration Number: </label>  
+        	   </li>
         	 
         	</ul>
       </div>
              <div id="discountonePan">
                  <ul>
+                     
+                     <li><select name="usertype">
+<option name="usertype" value="reviwer">Reviewer</option> 
+<option name="usertype" value="user">Researcher</option>
+  </select></li>
                      <li><input name="firstname" required="required" <?if(isset($fname)){echo "value=\"$fname\"";}else{echo "autofocus=\"autofocus\"";}?>/> </li> 
                      <li><input name="lastname" required="required"<?if(isset($lname)){echo "value=\"$lname\"";}?>/></li>
                      <li><input type="email" name="email" required="required"<?if(isset($mail)){echo "value=\"$mail\"";}?>/> </li>
@@ -88,6 +97,7 @@ top("sign-up"); ?>
                              
                              </select></li>
                           <li><input name="ins" required="required"<?if(isset($lname)){echo "value=\"$ins\"";}?>/></li>
+                          <li><input name="number" required="required"<?if(isset($num)){echo "value=\"$num\"";}?>/></li>
                  
                  </ul> 
       </div>

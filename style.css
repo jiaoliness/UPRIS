@@ -11,6 +11,9 @@ body{
 	font:11pt Arial, "Trebuchet MS", Tahoma, Verdana, sans-serif;
 	}
 	
+body select{
+            width: 157px;
+        }
 div, p, ul, h2, h3, img{
 	padding:0px; 
 	margin:0px;
