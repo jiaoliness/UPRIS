@@ -5,3 +5,7 @@ New user registered - Name: First Last Email: lol@gmail.com Field: cmsc at 4:38 
 New user registered - Name: First Last Email: lol@gmail.com Field: cmsc at 4:38 PM
 New useradviser registered - Name: Nilo Aranata Email: nilara@gmail.com Field: cmsc at 4:39 PM
 New user Type: reviewer registered - Name: Nilo Aranata Email: nilara@gmail.com Field: cmsc at 4:40 PM
+New user Type: user registered - Name: Jamie Anacleto Email: jamie@gmail.com Field: cmsc at 5:13 PM
+New user Type: user registered - Name: Jamie Anacleto Email: jamie@gmail.com Field: cmsc at 5:14 PM
+New user Type: reviewer registered - Name: Rhodel Timoteo Email: rtim@gmail.com Field: cme at 5:15 PM
+New user Type: adviser registered - Name: Nilo Araneta Email: nilara@gmail.com Field: qphy at 5:16 PM
