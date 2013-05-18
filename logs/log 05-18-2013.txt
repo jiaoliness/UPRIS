@@ -1,0 +1,2 @@
+New user Type: reviewer registered - Name: Marko Reviwer Email: review@gmail.com Field: envs at 8:01 AM
+New user Type: adviser registered - Name: Francsi Dimzon Email: fdd@gmail.com Field: agr at 8:14 AM

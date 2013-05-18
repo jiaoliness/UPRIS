@@ -86,7 +86,6 @@ sleep(1);
 
 login_class::login($email,$password);
 
-return true;
     }  
     
  

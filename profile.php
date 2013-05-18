@@ -6,7 +6,7 @@ require_once 'proposal_class.php';
 require_once 'dbconnection.php';
 dbconnection::getConnection();
 
-top("Profile");
+top("Researcher");
 
 
 if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans*/
@@ -54,7 +54,7 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
  
   </div>  
   </div>          
-</div>
+
 <?php }else{  ?>
     <h1> You are not logged in </h1> <!--displays a login box if user is not logged in-->
      <div id="bodyRightPan3">
@@ -73,9 +73,9 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
      echo "<p id=\"loginerror\">&nbspWrong Email or Password!</p>"; /*else displays this message*/
  }
  
- }
+ } echo "</form>";
  }?>
             
-</form>  </div> 
+ </div> </div> 
     
 <?php echo $bottom; ?>

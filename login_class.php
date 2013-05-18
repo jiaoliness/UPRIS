@@ -27,8 +27,7 @@ if(mysql_num_rows($result) == 1){ /*if a users login information is found in the
         $row = mysql_fetch_assoc($result);
         $_SESSION['risid'] = $row['userid'];
         $_SESSION['email'] = $email;
-        $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
-        
+        $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];        
       head(profile,""); 
 }
          
@@ -45,7 +44,7 @@ else if (mysql_num_rows($result3) == 1){ /*if the user is a reviewer, sets the S
         $_SESSION['reviewerid'] = $row['reviewerid'];
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
-        return true;
+         head(reviewerprofile,""); 
 }
 
 else if (mysql_num_rows($result4) == 1){ /*if the user is an adviser, sets the SESSION variables*/
@@ -53,7 +52,7 @@ else if (mysql_num_rows($result4) == 1){ /*if the user is an adviser, sets the S
         $_SESSION['adviserid'] = $row['adviserid'];
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['firstname'].' '.$row['lastname'];
-        return true;
+       head(adviserprofile,""); 
 }
 
 

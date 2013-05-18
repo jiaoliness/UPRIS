@@ -76,9 +76,9 @@ function top($where){ echo " <head>
 		<li><a href=\"aboutus.php\">About us</a></li>
 		<li><a href=\"support.php\">Support</a></li>
 		<li><a href=\"grants.php\">Grants</a></li>
-		<li><a href=\"fields.php\">Fields</a></li>
-		<li><a href=\"adminindex.php\">Admin</a></li>            
-                <li><a href= \"profile.php\"> Profile</a></li>
+		<li><a href=\"adviserprofile.php\">Adviser</a></li>
+		<li><a href=\"reviewerprofile.php\">Reviewer</a></li>            
+                <li><a href= \"profile.php\"> Researcher</a></li>
 		<li class=\"contact\"><a href=\"register.php\" class=\"contact\">Signup</a></li>
             </ul>
         </div>
