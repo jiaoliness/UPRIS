@@ -428,7 +428,7 @@ ul	{list-style-type:none;}
 	}
 	
 #namePan{
-	width:156px; 
+	width:167px; 
 	float:left;  
 	color:#4F4F4F; 
 	font-size:14px; 
@@ -436,11 +436,11 @@ ul	{list-style-type:none;}
 	}
 	
 #nameonePan{
-	width:156px; 
+	width:167px; 
 	float:left;
 	}
 	
-#nameonePan ul {width:156px;}
+#nameonePan ul {width:167px;}
 #nameonePan ul li{
 	float:left;
 	height:20px; 
