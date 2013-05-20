@@ -23,7 +23,7 @@ if(isset($_SESSION['adviserid'])){/*if user is loged in, displays his existing l
    
         <a href="logout.php">Logout</a>
      <a href="">function</a>
-        <a href="">another function</a>     
+          <a href="messages.php">View Messages</a>    
   </div>   
     
   <div id="bodyLeftPan">

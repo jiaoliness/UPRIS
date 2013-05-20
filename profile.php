@@ -24,7 +24,7 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
         <a href="logout.php">Logout</a>
        <? if(proposal_class::is_approved($_SESSION['email'], 'userinfo')){?> <a href="post.php">New Proposal</a><?} else {?><a href="" title="Your account still needs to be verified by our admins">Cannot post proposals yet</a><?}?>
         <a href="profile.php">Home</a>
-        <a href="profile.php">Home</a>        
+        <a href="messages.php">View Messages</a>        
   </div>   
     
   <div id="bodyLeftPan">

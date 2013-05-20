@@ -8,26 +8,9 @@ function head($page,$extension){
     header ("Location:http://$host$folder/$page.php$extension");
 }
 
-function redirect_to_home(){    /*function to redirect the user ot his profile page, or admin page if he is an administrator*/
-if(admin_class::isadmin()){    
-    head(adminindex,""); 
-    exit();
-    
-}
-else{
-    head(profile,""); 
-    exit();
-}     
-}
-
 function redirect_to_welcome(){
     head(index,""); 
     exit();
-}
-
-function redirect_to_loan(){
-   head(loan,"");
-   exit;
 }
 
 function logdata($data,$arg){
