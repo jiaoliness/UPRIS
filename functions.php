@@ -60,6 +60,8 @@ function top($where){ echo " <head>
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />
     <title>UP Research Information System</title>
     <link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link rel=\"stylesheet\" href=\"jquery.ui.tabs.css\" /> 
+    <link rel=\"stylesheet\" href=\"demo.css\" /> 
     <link rel=\"shortcut icon\" href=\"images/ris.ico\"  type=\"image/x-icon\" />
     <div id=\"headerimg\"><a href=\"index.php\"><img id=\"hdimg\" src=\"images/yab.png\" position=\"absolute\"></a></div>
     </head>

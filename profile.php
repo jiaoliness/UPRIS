@@ -30,9 +30,9 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
   <div id="bodyLeftPan">
     <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
 	<p>This is your profile page, click on a proposal title to view details</p>  
-        <script src="jquery-1.9.1.js"></script>
+      <script src="jquery-1.9.1.js"></script>
       <script src="jquery-ui-1.10.3.custom.js"></script>    
-      <link rel="stylesheet" href="jquery.ui.tabs.css">  
+ 
         <script>
   $(function() {
     $( "#tabs" ).tabs();
@@ -44,7 +44,7 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
     <li><a href="#tabs-1">New</a></li>
     <li><a href="#tabs-2">Pending</a></li>
     <li><a href="#tabs-3">Approved</a></li>
-      <li><a href="#tabs-4">Declined</a></li>
+    <li><a href="#tabs-4">Declined</a></li>
   </ul>
 
 <div id="tabs-1"><?proposal_class::view_proposals($sesid,"'new'")?></div>

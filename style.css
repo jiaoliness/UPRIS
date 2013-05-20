@@ -9,7 +9,7 @@ body{
 	background:url(images/mainbg.png) 0 0 repeat-x white; 
         color:#3C3C3C;
 	font:11pt Arial, "Trebuchet MS", Tahoma, Verdana, sans-serif;
-	}
+        	}
 	
 body select{
             width: 157px;
@@ -248,7 +248,7 @@ ul	{list-style-type:none;}
 	position:relative; 
 	margin:0 auto; 
 	padding:25px 0 0;
-     
+        min-height: 600px;
 	}
 
 #bodyLeftPan{
