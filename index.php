@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){  login_class::login($_POST['email'],$_PO
  ?> 
   </div>
     <div id="bodyLeftPan">
-        
+        <h2> Announcements</h2><hr>
         <?  admin_class::display_posts();?>
      
 	

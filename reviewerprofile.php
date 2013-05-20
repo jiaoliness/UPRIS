@@ -22,14 +22,13 @@ if(isset($_SESSION['reviewerid'])){/*if user is loged in, displays his existing 
   	<h2><span>profile</span> actions</h2>        
    
         <a href="logout.php">Logout</a>
-        <a href="post.php">New Proposal</a>
-        <a href="profile.php">Home</a>
-        <a href="profile.php">Home</a>        
+       <a href="">function</a>
+        <a href="">another function</a>       
   </div>   
     
   <div id="bodyLeftPan">
     <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
-	<p>This is your profile page, click on a proposal title to view details</p>  
+	<p>This is your reviewer profile page, click on a proposal title to view details</p>  
 
   </div>  
        

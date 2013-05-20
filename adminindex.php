@@ -29,8 +29,8 @@ top("Admin");
   	<h2><span>profile</span> actions</h2>        
    
         <a href="logout.php">Logout</a>
-        <a href="profile.php">Home</a>
-        <a href="profile.php">Home</a>
+        <a href="">function</a>
+        <a href="">another function</a>
         
   </div>   
   <div id="bodyLeftPan">

@@ -106,7 +106,12 @@ $bottom= '<div id="footermainPan">
   	<li>designed by:</li>
 	<li>The RIS Group - UP ITDC</li>
     </ul>
-    <div id="footerPanhtml"><a href="view-source:http://localhost/upris/">HTML</a></div>
+    <script>
+function viewthesource(){
+window.location="view-source:"+window.location
+}
+</script>
+    <div id="footerPanhtml"><a href="javascript:viewthesource()">HTML</a></div>
     <div id="footerPancss"><a href="style.css">css</a></div>
     </div>
     </div>

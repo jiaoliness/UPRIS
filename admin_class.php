@@ -34,8 +34,8 @@ $content=nl2br($content);
          
           
 while ($row = mysql_fetch_assoc($result)) {
-    echo "<h2>".$row['header']."</h2><hr>";
-    echo "<p>".$row['content']."</p>";
+    echo "<h2>".$row['header']."</h2>";
+    echo "<p>".$row['content']."</p><hr>";
     
     
 }
