@@ -7,9 +7,6 @@ top("proposal");
 if(!isset($_SESSION['risid'])){
     redirect_to_welcome();
 }
-
-
-
 $u=$_SESSION['risid'];
         ?>
 <div id="bodyPan">
@@ -56,12 +53,12 @@ $u=$_SESSION['risid'];
      	<input name="Submit" type="submit" value="Submit">
    
   </div>
-
+</form>
         </div>        
   
 
 	
-</form>
+
 
 
     <?
@@ -70,11 +67,6 @@ $u=$_SESSION['risid'];
 
     
     ?>
-<div>
-    
-       
-
-
-</div></div></div>
+</div></div>
 
 <? echo $bottom; ?>

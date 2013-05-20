@@ -14,7 +14,8 @@ if(!isset($_SESSION['adminid'])){
 top("Admin");
 
  if($_SERVER['REQUEST_METHOD']=='POST'){
-     admin_class::post($_POST['header'], $_POST['content']);
+   
+     admin_class::post($_POST['header'], $_POST["content"]);
      
      
  }
@@ -36,16 +37,17 @@ top("Admin");
     <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
 	<p>This is the admin page</p>
 	      <p>Post an announcement, use the span tag to highlight words</p>
+              <div>
       <form method="post" action="adminindex.php">
      
             <input name="header" placeholder="header.." required="required"/> <br/>
  
-            <div id="agreement">
+            <div id="agreement2">
             <textarea resize="none" name="content" required="required" placeholder="write an announcement.." rows="5" cols="90"></textarea>
             <br>
              <input type="submit" name="Submit" value="Post" />
              </div>
-        </form>  
+        </form>  </div>
             <script src="jquery-1.9.1.js"></script>
       <script src="jquery-ui-1.10.3.custom.js"></script>          
                            
@@ -54,14 +56,13 @@ top("Admin");
     $( "#tabs" ).tabs();
   });
   </script>
-  
+  <strong> Approve newly made accounts</strong>
   <div id="tabs">
-       <ul>
+  <ul>
     <li><a href="#tabs-1">Researchers</a></li>
     <li><a href="#tabs-2">Reviewers</a></li>
     <li><a href="#tabs-3">Advisers</a></li>  
   </ul>
-
 <div id="tabs-1"><?admin_class::view_accounts('userinfo');?></div>
 <div id="tabs-2"><?admin_class::view_accounts('reviewerinfo');?></div> 
 <div id="tabs-3"><?admin_class::view_accounts('adviserinfo');?></div>

@@ -41,6 +41,17 @@ echo "<td>".$row['status']."</td></tr>";
 echo '</table>';
 }
 }
+public static function is_approved($email,$table){
+$result=mysql_query("SELECT firstname FROM $table WHERE email='$email' AND active=1") or die(mysql_error());
+
+if(mysql_num_rows($result) == 1){
+    return true;
+}
+else{
+    return false;
+}
+}
+
 
     
 }

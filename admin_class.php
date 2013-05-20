@@ -13,7 +13,6 @@
     }
     
     public static function post($header,$content){
-        
        include_once('htmlpurifier/library/HTMLPurifier.auto.php');
        $config = HTMLPurifier_Config::createDefault();
        $config->set('HTML.Allowed', 'span');
@@ -24,9 +23,9 @@ $content = $filter->purify($content);
 $header = $filter->purify($header); 
 $content=filter_var($content,FILTER_SANITIZE_MAGIC_QUOTES);
 $header=filter_var($header,FILTER_SANITIZE_MAGIC_QUOTES);
-
+$content=nl2br($content);
     mysql_query("INSERT INTO posts VALUES(0,'$header','$content',now())") or die("Error in posting:".mysql_error());
-        
+      
     }
     
      public static function display_posts(){
@@ -65,17 +64,35 @@ while ($row = mysql_fetch_assoc($query2)) {
 $email=$row['email'];
 echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>";
 echo "<td>".$row['email']."</td>";
-echo "<td>".$row['field']."</td>";
+echo "<td>".self::display_field($row['email'],$table)."</td>";
 echo "<td>".$row['ins']."</td>";
 echo "<td>"."<a href=\"approve.php?e=$email&t=$table\">Approve</a>"."</td></tr>";
 
 }
 echo '</table>';
-}
-        
-        
+}}
+ 
+public static function display_field($email,$table){
+    $query= mysql_query("SELECT field FROM $table  WHERE email='$email'") or  die(mysql_error()); 
+    if(mysql_num_rows($query)==1){
+     $row = mysql_fetch_assoc($query);
+     
+     switch ($row['field']){
+     case 'cmsc': return "Computer Science"; break;
+     case 'qphy': return "Quantum Physics"; break;
+     case 'agr': return "Agriculture"; break;
+     case 'arch': return "Architecture"; break;
+     case 'bio': return "Biology"; break;
+     case 'cme': return "Computer Engineering"; break;
+     case 'phi': return "Philosophy"; break;
+     case 'fs': return "Food Science"; break;
+     case 'envs': return "Enviornmental Science"; break;
+     case 'mcb': return "Microbiology"; break;
+     case 'ch': return "Chemistry"; break;
+              
+     } 
     }
-    
+}
     
     }
 ?>

@@ -33,10 +33,10 @@ $regno = filter_var($r,FILTER_VALIDATE_INT);
  	echo  "<p id=\"error\">&nbsp&nbspInvalid last name!</p>" ;
  return false;
   } 
-
-   if($email) {}
+  
+   if(self::same_email($email,$usertype)) {}
  else {
- 	echo  "<p id=\"error\">&nbsp&nbspInvalid email!</p>" ;
+ 	echo  "<p id=\"error\">&nbsp&nbspEmail already in use!</p>" ;
  return false;
   }
 
@@ -88,7 +88,17 @@ login_class::login($email,$password);
 
     }  
     
- 
+ public static function same_email($email,$table){
+     $table=$table."info";
+     $same=mysql_query("SELECT email from $table WHERE email='$email'")or die("Error in same email:".mysql_error());	
+     
+if(mysql_num_rows($same) == 1){
+    return false;
+}
+else{
+    return true;
+}
+ }
      
 }
 ?>
