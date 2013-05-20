@@ -17,19 +17,21 @@
        include_once('htmlpurifier/library/HTMLPurifier.auto.php');
        $config = HTMLPurifier_Config::createDefault();
        $config->set('HTML.Allowed', 'span');
-       $config->set('HTML.Doctype', 'XHTML 1.0 Strict');
+       $config->set('HTML.Doctype', 'HTML 4.01 Transitional');
 
 $filter = new HTMLPurifier($config);
-$output = $filter->purify($content);         
-$output2=filter_var($output,FILTER_SANITIZE_MAGIC_QUOTES);
+$content = $filter->purify($content);     
+$header = $filter->purify($header); 
+$content=filter_var($content,FILTER_SANITIZE_MAGIC_QUOTES);
+$header=filter_var($header,FILTER_SANITIZE_MAGIC_QUOTES);
 
-    mysql_query("INSERT INTO posts VALUES(0,'$header','$output2',now())") or die("Error in posting:".mysql_error());
+    mysql_query("INSERT INTO posts VALUES(0,'$header','$content',now())") or die("Error in posting:".mysql_error());
         
     }
     
      public static function display_posts(){
          
-         $result=mysql_query("SELECT * FROM posts ORDER BY postid DESC LIMIT 9") or die(mysql_error());
+         $result=mysql_query("SELECT * FROM posts ORDER BY postid DESC LIMIT 10") or die(mysql_error());
          
           
 while ($row = mysql_fetch_assoc($result)) {
@@ -50,5 +52,30 @@ while ($row = mysql_fetch_assoc($result)) {
      
             
             
-    }}
+    }
+public static function view_accounts($table){
+        
+$query2= mysql_query("SELECT * FROM $table  WHERE active=0") or  die(mysql_error()); 
+if(mysql_num_rows($query2)){      
+ echo '<table id="tabbedtable">';    
+ echo "<tr>
+<th>Name</th><th>Email</th><th>Field</th><th>Institute</th><th>Approve</th></tr>";
+ 
+while ($row = mysql_fetch_assoc($query2)) {
+$email=$row['email'];
+echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>";
+echo "<td>".$row['email']."</td>";
+echo "<td>".$row['field']."</td>";
+echo "<td>".$row['ins']."</td>";
+echo "<td>"."<a href=\"approve.php?e=$email&t=$table\">Approve</a>"."</td></tr>";
+
+}
+echo '</table>';
+}
+        
+        
+    }
+    
+    
+    }
 ?>

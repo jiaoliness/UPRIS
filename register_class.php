@@ -78,7 +78,7 @@ else if($usertype=='adviser'){
 }
 
 
-mysql_query("INSERT INTO $table VALUES(0,'$email','$firstname','$lastname',MD5('$password'),'$field','$institute')") or die("Error in register:".mysql_error());	
+mysql_query("INSERT INTO $table VALUES(0,'$email','$firstname','$lastname',MD5('$password'),'$field','$institute',0)") or die("Error in register:".mysql_error());	
                 
 logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
 

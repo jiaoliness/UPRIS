@@ -41,12 +41,33 @@ top("Admin");
             <input name="header" placeholder="header.." required="required"/> <br/>
  
             <div id="agreement">
-            <textarea resize="none" name="content" required="required" placeholder="write an announcement.." rows="5" cols="60"></textarea>
+            <textarea resize="none" name="content" required="required" placeholder="write an announcement.." rows="5" cols="90"></textarea>
             <br>
              <input type="submit" name="Submit" value="Post" />
              </div>
         </form>  
-              
+            <script src="jquery-1.9.1.js"></script>
+      <script src="jquery-ui-1.10.3.custom.js"></script>          
+                           
+        <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+  
+  <div id="tabs">
+       <ul>
+    <li><a href="#tabs-1">Researchers</a></li>
+    <li><a href="#tabs-2">Reviewers</a></li>
+    <li><a href="#tabs-3">Advisers</a></li>  
+  </ul>
+
+<div id="tabs-1"><?admin_class::view_accounts('userinfo');?></div>
+<div id="tabs-2"><?admin_class::view_accounts('reviewerinfo');?></div> 
+<div id="tabs-3"><?admin_class::view_accounts('adviserinfo');?></div>
+
+ 
+  </div>  
         
         
 </div> </div> 
