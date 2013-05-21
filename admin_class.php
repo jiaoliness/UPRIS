@@ -64,7 +64,7 @@ while ($row = mysql_fetch_assoc($query2)) {
 $email=$row['email'];
 echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>";
 echo "<td>".$row['email']."</td>";
-echo "<td>".self::display_field($row['email'],$table)."</td>";
+echo "<td>".self::display_field($row['field'])."</td>";
 echo "<td>".$row['ins']."</td>";
 echo "<td>"."<a href=\"approve.php?e=$email&t=$table\">Approve</a>"."</td></tr>";
 
@@ -72,12 +72,9 @@ echo "<td>"."<a href=\"approve.php?e=$email&t=$table\">Approve</a>"."</td></tr>"
 echo '</table>';
 }}
  
-public static function display_field($email,$table){
-    $query= mysql_query("SELECT field FROM $table  WHERE email='$email'") or  die(mysql_error()); 
-    if(mysql_num_rows($query)==1){
-     $row = mysql_fetch_assoc($query);
+public static function display_field($field){ 
      
-     switch ($row['field']){
+     switch ($field){
      case 'cmsc': return "Computer Science"; break;
      case 'qphy': return "Quantum Physics"; break;
      case 'agr': return "Agriculture"; break;
@@ -92,7 +89,7 @@ public static function display_field($email,$table){
               
      } 
     }
-}
+
     
     }
 ?>

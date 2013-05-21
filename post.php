@@ -37,7 +37,20 @@ $u=$_SESSION['risid'];
                  <ul>
                      <li><input name="title" required="required"/> </li> 
                      <li><input name="prop" required="required"/></li>
-                     <li><input name="field" required="required"/> </li>
+                     <li><select name="field">
+<option name="field" value="agr" >Agriculture</option> 
+<option name="field" value="arch"> Architecture</option>
+<option name="field" value="bio" >Biology</option>
+<option name="field" value="cmsc">Computer Science</option>
+<option name="field" value="cme">Computer Engineering</option>
+<option name="field" value="phi" >Philosophy</option>       	    	
+<option name="field" value="fs">Food Science</option> 
+<option name="field" value="mcb" >Microbiology</option> 
+<option name="field" value="qphy" >Quantum Physics</option> 
+<option name="field" value="envs" >Environmental Science</option> 
+<option name="field" value="ch" >Chemistry</option>     
+                             
+                             </select> </li>
                      <li><input name="time" required="required"/></li>
                      <li><input  name="budget" required="required"/></li>                                  
                      <li><input type="file" name="image" required="required"></li>  

@@ -2,9 +2,10 @@
 
 <? require_once 'functions.php'; 
 require_once 'login_class.php'; 
+require_once 'admin_class.php'; 
 top("View"); 
 
-if(!login_class::is_logged_in() || !login_class::is_valid_user($_SESSION['risid']) || !isset($_GET['pid'])){
+if(!login_class::is_logged_in() || !isset($_GET['pid'])){
     redirect_to_welcome();
 }
 $articleid=$_GET['pid'];
@@ -45,7 +46,7 @@ while ($row = mysql_fetch_assoc($query2)) {
                	   </li>
         	   <li><label><?echo $row['proponents'];?> </label> 
        		   </li>
-       		   <li><label><?echo $row['field'];?></label>  
+       		   <li><label><?echo admin_class::display_field($row['field']);?></label>  
         	   </li>
         	   <li><label><?echo $row['duration'];?></label>  
         	   </li>

@@ -3,6 +3,7 @@
 require_once 'functions.php';
 require_once 'login_class.php';
 require_once 'proposal_class.php';
+require_once 'adviser_class.php';
 require_once 'dbconnection.php';
 dbconnection::getConnection();
 
@@ -28,7 +29,49 @@ if(isset($_SESSION['adviserid'])){/*if user is loged in, displays his existing l
     
   <div id="bodyLeftPan">
     <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
-	<p>This is your adviser profile page, click on a proposal title to view details</p>  
+	<p>This is your adviser profile page, click on a proposal title to view details</p> 
+        
+             <script src="jquery-1.9.1.js"></script>
+      <script src="jquery-ui-1.10.3.custom.js"></script>    
+ 
+        <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+  
+  <div id="tabs">
+       <ul>
+    <li><a href="#tabs-1">New</a></li>
+    <li><a href="#tabs-2">Pending</a></li>
+    <li><a href="#tabs-3">Approved</a></li>
+    <li><a href="#tabs-4">Declined</a></li>
+  </ul>
+
+<div id="tabs-1"> <?adviser_class::view_proposals($_SESSION['adviserid'],"'new'");?></div>
+<div id="tabs-2"><?adviser_class::view_proposals($_SESSION['adviserid'],"'pending'")?></div> 
+<div id="tabs-3"><?adviser_class::view_proposals($_SESSION['adviserid'],"'approved'")?></div>
+<div id="tabs-4"><?adviser_class::view_proposals($_SESSION['adviserid'],"'declined'")?></div>
+ 
+  </div>  
+        
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
   </div>  
        
