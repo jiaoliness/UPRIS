@@ -8,7 +8,7 @@ dbconnection::getConnection();
 top("message");
 
 $id=$_GET['mid'];
-    
+ mysql_query("UPDATE messages set status='read' WHERE messageid=$id");
   ?>   
 
       <?message_class::view_message($id);?>
