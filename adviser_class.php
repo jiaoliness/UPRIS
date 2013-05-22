@@ -48,16 +48,17 @@ echo '</table>';
     
     public static function view_reviewers($aid,$pid){
        $result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid)") or die(mysql_error());  
-     
+     $count=0;
        while( $row=  mysql_fetch_assoc($result)){
            $rid=$row['reviewerid'];
       $result2= mysql_query("SELECT id from reviews WHERE proposalid=$pid and reviewerid=$rid") or die(mysql_error());  
            if(mysql_num_rows($result2)==0){
+               $count+=1;
            echo $row['firstname']." ".$row['lastname'];
            echo '<input type="checkbox" name="reviewers[]" value='.$row['reviewerid']."/>";
            echo '<input type="hidden" name="pid" value="'.$pid.'"/>';
-       }            
-       }         
+       } }
+       if($count>0) { echo '<input type="submit" value="Assign!">'; }  else { echo "No reviewers available to assign";} 
     }
     
     public static function assigned_reviewers($aid,$pid){
@@ -69,7 +70,7 @@ echo '</table>';
            if(mysql_num_rows($result2)==1){
            echo $row['firstname']." ".$row['lastname'];
            }      
-           
+             
        }
         
     }

@@ -70,8 +70,9 @@ while ($row = mysql_fetch_assoc($query2)) {
         	   </li>
                     <li><label><?echo date("l, M d, Y",strtotime($row['date']));?></label>  
         	   </li>
-                    
-                        <li><label><a href="download.php?file=<?echo $row['doc'];?>"><?echo $row['title'];?></a></label>  
+                    <li><label><a href="<?echo $row['doc'];?>"><?echo $row['title'];?></a></label>  
+        	   </li>
+                    <li><label><a href="download.php?file=<?echo $row['doc'];?>"><?echo $row['title'];?></a></label>  
         	   </li>
                    
                             	         	 
@@ -84,12 +85,12 @@ while ($row = mysql_fetch_assoc($query2)) {
 ?>
 
              </div> 
-        <h3>Assign Reviewers</h3>   <hr>       
+        <h3>Assign Reviewers</h3>     
        <form action="adviserview.php?pid=<?echo $articleid;?>" method="POST">    
  <?       adviser_class::view_reviewers($_SESSION['adviserid'],$articleid);    ?>
-              <input type="submit" value="Assign!">
+            
       </form>
-        <h3>Already Assigned Reviewers</h3>    
+        <hr>     <h3>Already Assigned Reviewers</h3>    
        <? adviser_class::assigned_reviewers($_SESSION['adviserid'],$articleid);   ?>
         
 

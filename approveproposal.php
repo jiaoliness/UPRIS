@@ -3,12 +3,11 @@
 include_once 'functions.php';
 $pid=$_GET['pid'];
 
-top("approve");
 
-$query= mysql_query("SELECT * FROM `proposals`  WHERE proposalid = $pid") or  die(mysql_error());
-
+mysql_query("UPDATE `proposals`  set status='approved 'WHERE proposalid = $pid") or  die(mysql_error());
 
 
+head(adviserprofile,"");
 
 
 
