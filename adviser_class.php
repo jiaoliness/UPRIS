@@ -48,18 +48,30 @@ echo '</table>';
     
     public static function view_reviewers($aid,$pid){
        $result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid)") or die(mysql_error());  
-      $row=  mysql_fetch_assoc($result);
-      $rid=$row['reviewerid'];
-      $result2= mysql_query("SELECT * from reviews WHERE proposalid=$aid and reviewerid=$rid") or die(mysql_error());  
-         
-       while($row){
-           if(mysql_num_rows($result2)>0){
+     
+       while( $row=  mysql_fetch_assoc($result)){
+           $rid=$row['reviewerid'];
+      $result2= mysql_query("SELECT id from reviews WHERE proposalid=$pid and reviewerid=$rid") or die(mysql_error());  
+           if(mysql_num_rows($result2)==0){
            echo $row['firstname']." ".$row['lastname'];
            echo '<input type="checkbox" name="reviewers[]" value='.$row['reviewerid']."/>";
            echo '<input type="hidden" name="pid" value="'.$pid.'"/>';
-       }}
-     
-         
+       }            
+       }         
+    }
+    
+    public static function assigned_reviewers($aid,$pid){
+     $result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid)") or die(mysql_error());  
+      
+       while($row=mysql_fetch_assoc($result)){
+          $rid=$row['reviewerid'];
+          $result2= mysql_query("SELECT id from reviews WHERE proposalid=$pid and reviewerid=$rid") or die(mysql_error());
+           if(mysql_num_rows($result2)==1){
+           echo $row['firstname']." ".$row['lastname'];
+           }      
+           
+       }
+        
     }
             
             
