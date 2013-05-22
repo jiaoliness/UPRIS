@@ -122,6 +122,15 @@ public static function is_admin(){
           return false;
       }
 }
+
+public static function is_adviser(){
+    if(isset($_SESSION['adviserid']) && self::is_logged_in()){
+         return true;
+      }
+      else{
+          return false;
+      }
+}
     
 }
 

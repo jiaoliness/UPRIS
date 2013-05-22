@@ -44,11 +44,18 @@ echo "<span>".date("M d, Y",strtotime($row['date']))."</span></a></p>";
       $row = mysql_fetch_assoc($result);
       $to=$row['to'];
       $from=$row['from'];
-      $result2=mysql_query("SELECT * from messages where `to`=$to and `from`=$from ORDER BY messageid DESC") or die("error in message".mysql_error());
+      $result2=mysql_query("(SELECT * from messages where `to`=$to and `from`=$from) UNION (SELECT * from messages where `from`=$to and `to`=$from) ORDER BY messageid DESC") or die("error in message".mysql_error());
+      
      $name=mysql_fetch_assoc(mysql_query("(SELECT firstname, lastname from userinfo WHERE userid=$from) UNION (SELECT firstname, lastname from reviewerinfo WHERE reviewerid=$from) UNION(SELECT firstname, lastname from adviserinfo WHERE adviserid=$from)"));
+     $myname=mysql_fetch_assoc(mysql_query("(SELECT firstname, lastname from userinfo WHERE userid=$to) UNION (SELECT firstname, lastname from reviewerinfo WHERE reviewerid=$to) UNION(SELECT firstname, lastname from adviserinfo WHERE adviserid=$to)"));
       while ($row2=mysql_fetch_assoc($result2)) {           
             
-        echo "<div class=\"chatdiv\">".$name['firstname']." ".$name['lastname'].$row2['content'];    
+        echo "<div class=\"chatdiv\">";
+       
+        if(self::my_message($from)) { echo $myname['firstname']." ".$myname['lastname'];}
+        else { echo $name['firstname']." ".$name['lastname'];}
+        echo " --- ".$row2['subject']."&nbsp&nbsp&nbsp&nbsp";
+        echo $row2['content'];    
         
         echo "</div>";
     }
@@ -77,7 +84,21 @@ echo "<span>".date("M d, Y",strtotime($row['date']))."</span></a></p>";
         else{
             return "messageUnRead";
         }
-  }   
+  }  
+  
+   public static function my_message($from){
+       
+      if (isset($_SESSION['risid'])) { $id=$_SESSION['risid']; }
+      else if (isset($_SESSION['reviewerid'])) { $id=$_SESSION['reviewerid']; }
+      else if (isset($_SESSION['adviserid'])) { $id=$_SESSION['adviserid']; }
+      
+     if ($from==$id){
+         return true;
+     }
+     else{
+         return false;
+     }
+   }
     
     }
 ?>
