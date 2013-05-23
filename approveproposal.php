@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php
 include_once 'functions.php';
+
+if(!isset($_SESSION['adviserid'])){
+    redirect_to_welcome();
+}
+
 $pid=$_GET['pid'];
 
 

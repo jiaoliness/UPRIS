@@ -3,21 +3,12 @@
 <? require_once 'functions.php'; 
 require_once 'login_class.php'; 
 require_once 'admin_class.php'; 
-require_once 'adviser_class.php';
+require_once 'reviewer_class.php';
 top("View"); 
 
 $articleid=$_GET['pid'];
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $r=$_POST['reviewers'];
-
-for($i=0;$i<count($_POST['reviewers']);$i++){    
-adviser_class::assign_reviewer(rtrim($_POST['pid']), $r[$i]);}
-head(adviserview,"?pid=$articleid");
-}
-
-
-if(!login_class::is_logged_in() || !isset($_GET['pid']) || !isset($_SESSION['adviserid'])){
+if(!login_class::is_logged_in() || !isset($_GET['pid']) || !isset($_SESSION['reviewerid'])){
     redirect_to_welcome();
 }
 
@@ -81,14 +72,9 @@ while ($row = mysql_fetch_assoc($query2)) {
 ?>
 
              </div> 
-        <h3>Assign Reviewers</h3>     
-       <form action="adviserview.php?pid=<?echo $articleid;?>" method="POST">    
- <?       adviser_class::view_reviewers($_SESSION['adviserid'],$articleid);    ?>
-            
-      </form>
-        <hr>     <h3>Already Assigned Reviewers</h3>    
-       <? adviser_class::assigned_reviewers($_SESSION['adviserid'],$articleid);   ?>
-        
+        <h3>Recommend this proposal for approval</h3>     
+       
+     
 
     
 </div>

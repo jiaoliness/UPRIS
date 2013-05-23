@@ -4,6 +4,7 @@ require_once 'functions.php';
 require_once 'login_class.php';
 require_once 'proposal_class.php';
 require_once 'dbconnection.php';
+require_once 'reviewer_class.php';
 dbconnection::getConnection();
 
 top("Reviewer");
@@ -30,10 +31,36 @@ if(isset($_SESSION['reviewerid'])){/*if user is loged in, displays his existing 
     <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
 	<p>This is your reviewer profile page, click on a proposal title to view details</p>  
 
+               <script src="jquery-1.9.1.js"></script>
+      <script src="jquery-ui-1.10.3.custom.js"></script>    
+ 
+        <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+  
+  <div id="tabs">
+       <ul>
+    <li><a href="#tabs-1">New</a></li>
+    <li><a href="#tabs-2">Pending</a></li>
+    <li><a href="#tabs-3">Approved</a></li>
+    <li><a href="#tabs-4">Declined</a></li>
+  </ul>
+
+<div id="tabs-1"> <?reviewer_class::view_proposals($_SESSION['reviewerid'],"'new'");?></div>
+<div id="tabs-2"><?reviewer_class::view_proposals($_SESSION['reviewerid'],"'pending'")?></div> 
+<div id="tabs-3"><?reviewer_class::view_proposals($_SESSION['reviewerid'],"'approved'")?></div>
+<div id="tabs-4"><?reviewer_class::view_proposals($_SESSION['reviewerid'],"'declined'")?></div>
+ 
+  </div>  
+        
+        
+        
   </div>  
        
 <?php }else{  ?>
-    <h1> You are not logged in </h1> <!--displays a login box if user is not logged in-->
+    <h1> You are not logged in as a reviewer</h1> <!--displays a login box if user is not logged in-->
      <div id="bodyRightPan3">
           <h2><span>login</span> now</h2>       
 	<form id="login_form" method="post" action="profile.php">

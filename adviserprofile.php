@@ -10,8 +10,8 @@ dbconnection::getConnection();
 top("adviser");
 
 
-if(isset($_SESSION['adviserid'])){/*if user is loged in, displays his existing loans*/
-    $sesid=$_SESSION['adviserid'];
+if(isset($_SESSION['adviserid'])){
+ 
 
     
 ?>
