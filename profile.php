@@ -56,7 +56,7 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
   </div>          
 
 <?php }else{  ?>
-    <h1> You are not logged in </h1> <!--displays a login box if user is not logged in-->
+    <h1> You are not logged in as a Researcher</h1> <!--displays a login box if user is not logged in-->
      <div id="bodyRightPan3">
           <h2><span>login</span> now</h2>       
 	<form id="login_form" method="post" action="profile.php">

@@ -48,7 +48,7 @@ echo '</table>';
     }
     
     public static function view_reviewers($aid,$pid){
-       $result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid)") or die(mysql_error());  
+       $result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid) and active=1") or die(mysql_error());  
      $count=0;
        while( $row=  mysql_fetch_assoc($result)){
            $rid=$row['reviewerid'];
@@ -67,9 +67,13 @@ echo '</table>';
       
        while($row=mysql_fetch_assoc($result)){
           $rid=$row['reviewerid'];
-          $result2= mysql_query("SELECT id from reviews WHERE proposalid=$pid and reviewerid=$rid") or die(mysql_error());
-           if(mysql_num_rows($result2)==1){
-           echo $row['firstname']." ".$row['lastname'];
+          $result2= mysql_query("SELECT id,recommended from reviews WHERE proposalid=$pid and reviewerid=$rid") or die(mysql_error());
+          $row2=mysql_fetch_assoc($result2); 
+          if(mysql_num_rows($result2)==1){
+           echo "<br/>".$row['firstname']." ".$row['lastname'];
+           if($row2['recommended']=='1'){
+               echo " recommended this <br/>";
+           }
            }      
              
        }

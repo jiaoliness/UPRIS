@@ -33,7 +33,7 @@ echo $row['proposalid']."\">".$row['title']."</a></td>";
 
 echo "<td>".date("l, M d, Y",strtotime($row['date']))."</td>";
 echo "<td>".$row['status']."</td>";
-if($status!="'approved'"){echo "<td>"."<a href=\"approveproposal.php?pid=$pid\">"."Approve"."</a></td>";}
+if($status!="'approved'"){echo "<td>"."<a href=\"recommendproposal.php?pid=$pid\">"."Recommend"."</a></td>";}
 else {}
 echo "</tr>";
 }
