@@ -4,20 +4,6 @@ dbconnection::getConnection();
 
 class proposal_class{
 
-    public static function approvedAdviser($id){
-        
-        
-    }
-    
-     public static function approvedReviewer($id){
-        
-        
-    }
-    
-     public static function approvedBudget($id){
-        
-        
-    }
 
 public static function view_proposals($sesid,$filter){
     

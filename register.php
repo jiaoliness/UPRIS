@@ -64,7 +64,7 @@ top("sign-up"); ?>
         	   </li>
         	   <li><label for="field">Field of Research:</label> 
         	   </li>
-        	   <li><label for="ins">Institute:</label>  <span id="txtHintI"></span>
+        	   <li><label for="ins">Academic Affiliation:</label>  <span id="txtHintI"></span>
         	   </li>
                     <li><label for="number">Registration Number: </label>   <span id="txtHintN"></span>
         	   </li>

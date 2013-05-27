@@ -73,7 +73,7 @@ while ($row = mysql_fetch_assoc($query2)) {
 
              </div> 
         <h3>Recommend this proposal for approval</h3>     
-       
+        <a href="makereview.php?pid=<?echo $_GET['pid'];?>&rid=<?echo $_SESSION['reviewerid']?>">Make review</a>
      
 
     

@@ -23,7 +23,8 @@ if(!login_class::is_logged_in() || !isset($_GET['pid']) || !isset($_SESSION['adv
 
 
 
-$query2= mysql_query("SELECT * FROM `proposals`  WHERE proposalid = $articleid ") or  die(mysql_error()); /*query the users unpaid loans*/
+$query2= mysql_query("SELECT * FROM `proposals`  WHERE proposalid = $articleid ") or  die(mysql_error()); 
+mysql_query("UPDATE `proposals`  set status='pending' WHERE proposalid = $articleid ")or  die(mysql_error());
 if(mysql_num_rows($query2)){  
 while ($row = mysql_fetch_assoc($query2)) {
 

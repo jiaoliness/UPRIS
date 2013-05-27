@@ -24,7 +24,7 @@ if(isset($_SESSION['reviewerid'])){/*if user is loged in, displays his existing 
    
         <a href="logout.php">Logout</a>
        <a href="">function</a>
-         <a href="messages.php">View Messages</a>       
+           
   </div>   
     
   <div id="bodyLeftPan">
