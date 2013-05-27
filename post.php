@@ -12,7 +12,7 @@ $u=$_SESSION['risid'];
 <div id="bodyPan">
   <div id="bodyLeftPan">
 	<h3><span>New </span>Proposal</h3>
-        
+         <p><span>Please download first the research proposal template <a href="download.php?file=./docs/2012 RESEARCH PROPOSALS APPLICATION GUIDE Forms 1 to 5 revised as of 05-21-12.doc">here</a>, fill it up and attach.</span></p>
         <div id="bookcatagories">
 	<form name="agreement" method="post" enctype="multipart/form-data" action="upload.php">
       <div id="nameonePan">

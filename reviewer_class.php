@@ -41,7 +41,7 @@ echo $row['proposalid']."\">".$row['title']."</a></td>";
 
 echo "<td>".date("l, M d, Y",strtotime($row['date']))."</td>";
 echo "<td>".$row['status']."</td>";
-if($status!="'approved'" AND $status!="'declined'"){echo "<td>"."<a href=\"makereview.php?pid=$pid&rid=$id\">"."Make a review"."</a></td>";}
+if($status!="'approved'" AND $status!="'declined'"){echo "<td>"."<a href=\"guidelines.php?pid=$pid&rid=$id\">"."Make a review"."</a></td>";}
 else {}
 echo "</tr>";
 }
@@ -49,8 +49,8 @@ echo '</table>';
         
     }}}}
     
-public static function post_review($pid,$rid,$relevance,$relevancecom,$helpful,$helpfulcom,$overall){
-    mysql_query("INSERT into reviewed VALUES(0,'$pid','$rid','$relevance','$relevancecom','$helpful','$helpfulcom','$overall')") or die(mysql_error());
+public static function post_review($pid,$rid,$oner,$onec,$twor,$twoc,$threer,$threec,$fourr,$fourc,$fiver,$fivec,$sixr,$sixc,$sevenr,$sevenc,$eightr,$eightc,$overall){
+    mysql_query("INSERT into reviewed VALUES(0,'$pid','$rid','$oner','$onec','$twor','$twoc','$threer','$threec','$fourr','$fourc','$fiver','$fivec','$sixr','$sixc','$sevenr','$sevenc','$eightr','$eightc',$overall')") or die(mysql_error());
     head(reviewerprofile,"");
 }
     

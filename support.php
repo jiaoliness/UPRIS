@@ -8,14 +8,12 @@ top("support");
     <div id="bodyLeftPan">
         <h2><span>Support </span>Page</h2><br>
         
-        <p><span>UP RIS Main Office</span></p>
-	<p> Diliman, Quezon City 5023 
-Tel No.: (033) 5138770-71</p>
+        <p><span>CHED Order no. 2</span></p>
+	<p><a href="download.php?file=./docs/CHED ORDER No. 02.pdf">Download</a></p>
         
                
-        <p><span>UP Diliman Admin</span></p>
-	<p> Diliman, Quezon City 5023 
-Tel No.: (033) 5463644-56</p>
+        <p><span>COA Circular 1994-2013</span></p>
+	<p><a href="download.php?file=./docs/COA Circular 94-013.doc">Download</a></p>
         
 	
 	  

@@ -24,48 +24,105 @@ else{
 
  if($_SERVER['REQUEST_METHOD']=='POST'){
      
-     reviewer_class::post_review($pid,$rid,$_POST['rrate'],trim($_POST['rcomment']),$_POST['hrate'],
-             trim($_POST['hcomment']),$_POST['overall']);
-     
-     
+     reviewer_class::post_review($pid,$rid,
+             $_POST['1rate'],trim($_POST['1comment']),
+             $_POST['2rate'],trim($_POST['2comment']),
+             $_POST['3rate'],trim($_POST['3comment']),
+             $_POST['4rate'],trim($_POST['4comment']),
+             $_POST['5rate'],trim($_POST['5comment']),
+             $_POST['6rate'],trim($_POST['6comment']),
+             $_POST['7rate'],trim($_POST['7comment']),
+             $_POST['8rate'],trim($_POST['8comment']) 
+             ,$_POST['overall']);
  }
 
  
  
  ?>
 <form action="makereview.php?rid=<?echo $rid;?>&pid=<?echo $pid;?>" method="POST">
-<label for="rrate">Relevance to the topic</label>
-<select name="rrate" required="required">
-<option name="rrate" value="1">1</option> 
-<option name="rrate" value="2">2</option>
-<option name="rrate" value="3">3</option>
-<option name="rrate" value="4">4</option>
-<option name="rrate" value="5">5</option>
+    
+  <p><span>Please download first the Criteria for evaluating this proposal <a href="download.php?file=./docs/CriteriaForR&DProposals&Form.pdf">here</a>.</span></p>   
+<label for="1rate">1.</label>
+<select name="1rate" required="required">
+<option name="1rate" value="1">1</option> 
+<option name="1rate" value="2">2</option>
+<option name="1rate" value="3">3</option>
+<option name="1rate" value="4">4</option>
+<option name="1rate" value="5">5</option>
 </select><br>
-<textarea name="rcomment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"> </textarea><br>
+<textarea name="1comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
 
 
 
-<label for="hrate">Helpfulness</label>
-<select name="hrate" required="required">
-<option name="hrate" value="1">1</option> 
-<option name="hrate" value="2">2</option>
-<option name="hrate" value="3">3</option>
-<option name="hrate" value="4">4</option>
-<option name="hrate" value="5">5</option>
+<label for="2rate">2.</label>
+<select name="2rate" required="required">
+<option name="2rate" value="1">1</option> 
+<option name="2rate" value="2">2</option>
+<option name="2rate" value="3">3</option>
+<option name="2rate" value="4">4</option>
+<option name="2rate" value="5">5</option>
 </select><br>
-<textarea name="hcomment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"> </textarea><br>
+<textarea name="2comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
 
-<label for="rate">Another category</label>
-<select name="rate" required="required">
-<option name="rate" value="1">1</option> 
-<option name="rate" value="2">2</option>
-<option name="rate" value="3">3</option>
-<option name="rate" value="4">4</option>
-<option name="rate" value="5">5</option>
+<label for="3rate">3.</label>
+<select name="3rate" required="required">
+<option name="3rate" value="1">1</option> 
+<option name="3rate" value="2">2</option>
+<option name="3rate" value="3">3</option>
+<option name="3rate" value="4">4</option>
+<option name="3rate" value="5">5</option>
 </select><br>
-<textarea name="comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"> </textarea><br>
+<textarea name="3comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
 
+<label for="4rate">4.</label>
+<select name="4rate" required="required">
+<option name="4rate" value="1">1</option> 
+<option name="4rate" value="2">2</option>
+<option name="4rate" value="3">3</option>
+<option name="4rate" value="4">4</option>
+<option name="4rate" value="5">5</option>
+</select><br>
+<textarea name="4comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
+
+<label for="5rate">5.</label>
+<select name="5rate" required="required">
+<option name="5rate" value="1">1</option> 
+<option name="5rate" value="2">2</option>
+<option name="5rate" value="3">3</option>
+<option name="5rate" value="4">4</option>
+<option name="5rate" value="5">5</option>
+</select><br>
+<textarea name="5comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
+
+<label for="6rate">6.</label>
+<select name="6rate" required="required">
+<option name="6rate" value="1">1</option> 
+<option name="6rate" value="2">2</option>
+<option name="6rate" value="3">3</option>
+<option name="6rate" value="4">4</option>
+<option name="6rate" value="5">5</option>
+</select><br>
+<textarea name="6comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
+
+<label for="7rate">7.</label>
+<select name="7rate" required="required">
+<option name="7rate" value="1">1</option> 
+<option name="7rate" value="2">2</option>
+<option name="7rate" value="3">3</option>
+<option name="7rate" value="4">4</option>
+<option name="7rate" value="5">5</option>
+</select><br>
+<textarea name="7comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
+
+<label for="8rate">8.</label>
+<select name="8rate" required="required">
+<option name="8rate" value="1">1</option> 
+<option name="8rate" value="2">2</option>
+<option name="8rate" value="3">3</option>
+<option name="8rate" value="4">4</option>
+<option name="8rate" value="5">5</option>
+</select><br>
+<textarea name="8comment" required="required" class="review" required="required" placeholder="write a comment.." rows="5" cols="90"></textarea><br>
 
 <select name="overall" required="required">
 <option name="overall" value="recommend">Recommend</option> 
