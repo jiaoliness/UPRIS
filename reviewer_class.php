@@ -50,7 +50,7 @@ echo '</table>';
     }}}}
     
 public static function post_review($pid,$rid,$oner,$onec,$twor,$twoc,$threer,$threec,$fourr,$fourc,$fiver,$fivec,$sixr,$sixc,$sevenr,$sevenc,$eightr,$eightc,$overall){
-    mysql_query("INSERT into reviewed VALUES(0,'$pid','$rid','$oner','$onec','$twor','$twoc','$threer','$threec','$fourr','$fourc','$fiver','$fivec','$sixr','$sixc','$sevenr','$sevenc','$eightr','$eightc',$overall')") or die(mysql_error());
+    mysql_query("INSERT into reviewed VALUES(0,'$pid','$rid','$oner','$onec','$twor','$twoc','$threer','$threec','$fourr','$fourc','$fiver','$fivec','$sixr','$sixc','$sevenr','$sevenc','$eightr','$eightc','$overall')") or die(mysql_error());
     head(reviewerprofile,"");
 }
     
