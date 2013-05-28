@@ -15,9 +15,7 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
     
 ?>
 <div id="bodyPan">
-    
-    
-       <div id="bodyRightPan">
+    <div id="bodyRightPan">
               
   	<h2><span>profile</span> actions</h2>        
    
@@ -25,36 +23,36 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
        <? if(proposal_class::is_approved($_SESSION['email'], 'userinfo')){?> <a href="post.php">New Proposal</a><?} else {?><a href="" title="Your account still needs to be verified by our admins">Cannot post proposals yet</a><?}?>
         <a href="profile.php">Home</a>
         <a href="messages.php">View Messages</a>        
-  </div>   
+	</div>   
     
-  <div id="bodyLeftPan">
-    <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
+	<div id="welcome">
+    <h2>Logged in as <?php echo $_SESSION['name']; ?></h2>
 	<p>This is your profile page, click on a proposal title to view details</p>  
       <script src="jquery-1.9.1.js"></script>
       <script src="jquery-ui-1.10.3.custom.js"></script>    
  
-        <script>
+	</div>    
+<script>
   $(function() {
     $( "#tabs" ).tabs();
   });
-  </script>
-  
-  <div id="tabs">
-       <ul>
-    <li><a href="#tabs-1">New</a></li>
-    <li><a href="#tabs-2">Pending</a></li>
-    <li><a href="#tabs-3">Approved</a></li>
-    <li><a href="#tabs-4">Declined</a></li>
-  </ul>
+</script>
+	<div id = "proposals">
+		<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">New</a></li>
+			<li><a href="#tabs-2">Pending</a></li>
+			<li><a href="#tabs-3">Approved</a></li>
+			<li><a href="#tabs-4">Declined</a></li>
+		</ul>
 
-<div id="tabs-1"><?proposal_class::view_proposals($sesid,"'new'")?></div>
-<div id="tabs-2"><?proposal_class::view_proposals($sesid,"'pending'")?></div> 
-<div id="tabs-3"><?proposal_class::view_proposals($sesid,"'approved'")?></div>
-<div id="tabs-4"><?proposal_class::view_proposals($sesid,"'declined'")?></div>
- 
-  </div>  
-  </div>          
-
+		<div id="tabs-1"><?proposal_class::view_proposals($sesid,"'new'")?></div>
+		<div id="tabs-2"><?proposal_class::view_proposals($sesid,"'pending'")?></div> 
+		<div id="tabs-3"><?proposal_class::view_proposals($sesid,"'approved'")?></div>
+		<div id="tabs-4"><?proposal_class::view_proposals($sesid,"'declined'")?></div>
+		 
+		  </div>    
+	</div>
 <?php }else{  ?>
     <h1> You are not logged in as a Researcher</h1> <!--displays a login box if user is not logged in-->
      <div id="bodyRightPan3">
