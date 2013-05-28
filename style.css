@@ -63,15 +63,32 @@ margin: 8px;
 padding-left:3px;
             
         }
+#wrap{
+	background: #ffffff; /* Set content background to white */
+	width: 625px; /* Set the width of our content area */
+	margin-left: 200px; /* Center our content in our browser */
+	/* Margin top to make some space between the header and the content */
+	padding: 0px; /* Padding to make some more space for our text */
+	text-align: center; /* Center our content text */
+	
+	}
 #agreement textarea{
         width: 434px;
         height: 190px;
-         resize: none;       
+        resize: none;       
         }
 
- #agreement{
+#agreement{
      float: left;
+	 margin: 0 0 0 10px;
             
+ }
+#reg{
+     position:relative;
+     padding:2px 3px;
+	 margin: 0 0 0 180px;
+     font-size: 14px;
+     
  }
  
  #agreement2 textarea{
@@ -85,12 +102,7 @@ padding-left:3px;
      float: left;
             
  }
- #reg{
-     position:relative;
-     padding:2px 3px;
-     font-size: 14px;
-     
- }
+
 ul	{list-style-type:none;}
 
 #hdimg{
@@ -255,11 +267,11 @@ ul	{list-style-type:none;}
 	}
 	
 #bodyPan{
-	width:95%; 
+	width:90%; 
 	position:relative; 
 	margin:0 auto; 
-	padding:25px 0 0;
-        min-height: 600px;
+	padding:10px 0 0;
+     
 	}
 
 #bodyLeftPan{
@@ -267,7 +279,10 @@ ul	{list-style-type:none;}
 	float:left; 
 	
 	}
-	
+#body{
+	width: 76%;
+	margin: 0 0 0 90px;
+}	
 #bodyLeftPan h2{
 	width:auto; 
 		
@@ -448,6 +463,7 @@ ul	{list-style-type:none;}
 	
 #nameonePan{
 	width:167px; 
+	margin-left: 130px;
 	float:left;
 	}
 	
@@ -572,9 +588,9 @@ body h1{
         
 #bodyRightPan2{
 	width:235px; 
-	float:left; 
+	margin: 0 0 0 275px; 
 	padding:0 0 28px;
-	}      
+	}           
 #bodyRightPan h2{
 	width:195px; 
 	height:35px; 
@@ -600,13 +616,11 @@ body h1{
 	}
 
 #bodyRightPan2 h2{
-	width:195px; 
-	height:35px; 
 	display:block; 	  
 	font:24px/34px Georgia; 
-	margin:6px 8px 16px; 
-	padding-left: 20px;
-        background: white;
+	margin:6px 10px 16px; 
+	padding-left: 0px;
+    background: white;
 	}        
 	
 #bodyRightPan{

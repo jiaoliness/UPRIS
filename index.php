@@ -31,7 +31,7 @@ mail($to,$subject,$txt,$headers);*/
  <?php 
  
        }else{ ?> <!--else if user is not logged in, displays the login now box-->
-  	<h2><span>Login</span> form</h2>
+  	<h2><span>Login</span> Form</h2>
 	<ul>
 	<form method="post" action="index.php">
             <label for="email">Email:</label>
@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){  login_class::login($_POST['email'],$_PO
  
  ?> 
   </div>
-    <div id="bodyLeftPan">
+    <div id="body">
         <h2> Announcements</h2><hr>
         <?  admin_class::display_posts();?>
      
