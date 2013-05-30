@@ -48,10 +48,10 @@ if(isset($_SESSION['adviserid'])){
     <li><a href="#tabs-4">Declined</a></li>
   </ul>
 
-<div id="tabs-1"> <?adviser_class::view_proposals($_SESSION['adviserid'],"'new'");?></div>
-<div id="tabs-2"><?adviser_class::view_proposals($_SESSION['adviserid'],"'pending'")?></div> 
-<div id="tabs-3"><?adviser_class::view_proposals($_SESSION['adviserid'],"'approved'")?></div>
-<div id="tabs-4"><?adviser_class::view_proposals($_SESSION['adviserid'],"'declined'")?></div>
+<div id="tabs-1"> <?php adviser_class::view_proposals($_SESSION['adviserid'],"'new'");?></div>
+<div id="tabs-2"><?php adviser_class::view_proposals($_SESSION['adviserid'],"'pending'")?></div> 
+<div id="tabs-3"><?php adviser_class::view_proposals($_SESSION['adviserid'],"'approved'")?></div>
+<div id="tabs-4"><?php adviser_class::view_proposals($_SESSION['adviserid'],"'declined'")?></div>
  
   </div>  
         
