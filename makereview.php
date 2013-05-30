@@ -13,7 +13,7 @@ if(!isset($_SESSION['reviewerid']) OR !isset($_GET['pid']) OR !isset($_GET['rid'
 $pid=$_GET['pid'];
 $rid=$_GET['rid'];
 
-$result=mysql_query("SELECT * from reviewed WHERE proposalid=$pid and reviewerid=$rid");
+$result=mysql_query("SELECT * from reviews WHERE proposalid=$pid and reviewerid=$rid");
 if(mysql_num_rows($result) == 1){
     echo "<h1><span>You already submitted a proposal for this submission</h1></span>";
     
@@ -139,7 +139,7 @@ else{
 
 
 
-<?
+<?php
 }
  echo $bottom;
 ?>

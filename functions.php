@@ -63,7 +63,7 @@ function top($where){ echo " <head>
 		<li><a href=\"grants.php\">Grants</a></li>
 		<li><a href=\"adviserprofile.php\">Adviser</a></li>
 		<li><a href=\"reviewerprofile.php\">Reviewer</a></li>            
-        <li><a href= \"profile.php\"> Proponent</a></li>
+        <li><a href= \"profile.php\"> Researcher</a></li>
 		<li class=\"signup\" ><a href= \"register.php\"> Signup</a> </li>
             </ul>
         </div>

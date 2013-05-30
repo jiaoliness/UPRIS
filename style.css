@@ -29,16 +29,16 @@ div, p, ul, h2, h3, img{
 #sucess{
 width: 266px;
 height: 38px;
-border: 1px solid #CF1111;
+border: 1px solid #1B3665;
 background: rgb(243,243,243);
-color:#CF1111;
+color:#1B3665;
 font: 22px Georgia;
 margin: 8px;   
             }
      
 #bodyRightPan #index{
 font-size: 15px;
-color:#CF1111;
+color:#1B3665;
                 
             }        
             
@@ -46,9 +46,9 @@ color:#CF1111;
       
 width: 246px;
 height: 36px;
-border: 1px solid #CF1111;
+border: 1px solid #1B3665;
 background: rgb(243,243,243);
-color:#CF1111;
+color:#1B3665;
 font: 22px Georgia;
 margin: 8px;       
             
@@ -59,9 +59,9 @@ margin: 8px;
       
 width: 246px;
 height: 68px;
-border: 1px solid #CF1111;
+border: 1px solid #1B3665;
 background: rgb(243,243,243);
-color:#CF1111;
+color:#1B3665;
 font: 22px Georgia;
 margin: 8px;  
 padding-left:3px;
@@ -76,10 +76,10 @@ padding-left:3px;
 	}
 #wrap h2, h3{
 	margin: 20px 0 20px 0px;
-	color: #cf1111;
+	color: #1B3665;
 }
 #border1{
-	border: 2px solid #cf1111
+	border: 2px solid #1B3665
 }
 #agreement textarea{
         width: 434px;
@@ -236,7 +236,7 @@ ul	{list-style-type:none;}
 	
 #topMenuMiddlePan ul li.home{
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	text-decoration:none; 
 	font:10px "Trebuchet MS"; 
 	font-weight:bold; 
@@ -254,7 +254,7 @@ ul	{list-style-type:none;}
 	height:16px; 
 	display:block; 
 	background:white; 
-	color: #CF1111;
+	color: #1B3665;
 	font:10px "Trebuchet MS"; 
 	text-decoration:none; 
 	font-weight:bold; 
@@ -283,11 +283,7 @@ ul	{list-style-type:none;}
      
 	}
 
-#bodyLeftPan{
-	width:100%; 
-	margin: 0 0 0 90px;
-	
-	}
+
 #bodyy{
 	width: 80%;
 	margin: 10px 0px 0 50px;
@@ -295,10 +291,15 @@ ul	{list-style-type:none;}
 #bodyy h2{
 	margin-right: 10px;
 }
+#bodyLeftPan{
+	width:100%; 
+	margin: 0 0 0 90px;
+	
+	}
 #bodyLeftPan h2{
 	width:auto; 
 		
-	color:#CF1111; 
+	color:#1B3665; 
 	font:28px "Times New Roman";
 	}
         
@@ -306,27 +307,27 @@ ul	{list-style-type:none;}
     width:410px; 
 	height:auto; 
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font:28px "Times New Roman";
         }
         
 	
 #bodyLeftPan h2 span{
 	background:white; 
-	color:#CF1111;
+	color:#1B3665;
 	}
 
 #bodyLeftPan h3{
 	width:410px; 
 	height:30px; 
         padding-top: 15px;
-	color: #CF1111; 
+	color: #1B3665; 
 	font:27px "Times New Roman";
 	}
 	
 #bodyLeftPan h3 span{
 	background:white; 
-	color:#CF1111;
+	color:#1B3665;
       font:27px "Times New Roman";
 	}
 
@@ -344,18 +345,18 @@ ul	{list-style-type:none;}
 
 #bodyLeftPan p span {
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font-weight:bold;
 	}
 
 #bodyLeftPan ul{	
 	width:auto; 
-	margin:10px 0 0;
+	margin:5px 0 0;
 	}
 	
 #bodyLeftPan ul li{
 	width:auto; 
-	height:20px;
+	height:10px;
       margin: 0px;
 	}
 	
@@ -380,7 +381,7 @@ ul	{list-style-type:none;}
 }
 	
 #bodyRightPan a:hover{
-        background:#CF1111;
+        background:#1B3665;
         color: #FFF;
 }
 
@@ -511,7 +512,7 @@ ul	{list-style-type:none;}
 #priceonePan ul li{
 	width:133px; 
 	height:20px;
-	color:#CF1111; 
+	color:#1B3665; 
 	line-height:20px; 
 	font-size:12px; 
 	font-weight:bold; 
@@ -535,7 +536,7 @@ ul	{list-style-type:none;}
 	width:180px; 
 	height:20px; 
 	 
-	color:#CF1111; 
+	color:#1B3665; 
 	font-size:12px; 
 	font-weight:bold; 
 	padding:0 0 0 10px;
@@ -548,7 +549,7 @@ body h1{
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 25px;
-	color: #CF1111;
+	color: #1B3665;
 	}
 #bodyRightPan3{
 	width:235px; 
@@ -567,7 +568,7 @@ body h1{
 	display:block; 
 	border:1px solid #DADADA; 
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font:24px/34px Georgia, "Times New Roman"; 
 	margin:6px 8px 16px; 
 	padding-left: 20px;
@@ -575,7 +576,7 @@ body h1{
 	
 #bodyRightPan3 h2 span{
 	background:white; 
-	color:#CF1111;
+	color:#1B3665;
 	}
 
 #bodyRightPan3 h3{
@@ -584,7 +585,7 @@ body h1{
 	display:block; 
 	border:1px solid #DADADA; 
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font:24px/34px Georgia, "Times New Roman", Times, serif; 
 	margin:6px 8px 0; 
 	padding-left:20px;
@@ -592,7 +593,7 @@ body h1{
 	
 #bodyRightPan3 h3 span{
 	background:white; 
-	color:#CF1111;
+	color:#1B3665;
 	}
 
 #bodyRightPan3 ul{
@@ -616,7 +617,7 @@ body h1{
 	display:block; 
 	border:1px solid #DADADA; 
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font:24px/34px Georgia, "Times New Roman", Times, serif; 
 	margin:6px 8px 16px; 
 	padding-left: 20px;
@@ -625,7 +626,7 @@ body h1{
 	
 #bodyRightPan2 h2 span{
 	color: black;
-        color: #CF1111;
+        color: #1B3665;
 	}        
         
 #bodyRightPan2{
@@ -657,7 +658,7 @@ body h1{
 	display:block; 
 	border:1px solid #DADADA; 
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font:24px/34px Georgia, "Times New Roman", Times, serif; 
 	margin:6px 8px 16px; 
 	padding-left: 15px;
@@ -666,7 +667,7 @@ body h1{
 	
 #bodyRightPan h2 span{
 	background:white; 
-	color:#CF1111;
+	color:#1B3665;
 	}
 
 #bodyRightPan h3{
@@ -675,7 +676,7 @@ body h1{
 	display:block; 
 	border:1px solid #DADADA; 
 	background:white; 
-	color:#CF1111; 
+	color:#1B3665; 
 	font:24px/34px Georgia, "Times New Roman", Times, serif; 
 	margin:6px 8px 0; 
 	padding-left:20px;
@@ -683,7 +684,7 @@ body h1{
 	
 #bodyRightPan h3 span{
 	background:white; 
-	color:#CF1111;
+	color:#1B3665;
 	}
 
 #bodyRightPan ul{
@@ -795,7 +796,7 @@ body h1{
 #footerPan p.copyright{
 	width:450px; 
 	background:#F3F3F3; 
-	color:#CF1111; 
+	color:#1B3665; 
 	position:absolute; 
 	top:23px; 
 	left:40px; 
@@ -888,7 +889,7 @@ body h1{
 	}
         
 #bodyLeftPan #loan{
-	border: 2px solid #CF1111;
+	border: 2px solid #1B3665;
         padding: 5px;
        
 	}
@@ -942,7 +943,7 @@ body h1{
 }
 	
 #bodyRightPanM a:hover{
-        background:#CF1111;
+        background:#1B3665;
         color: #FFF;
 }     
 #bodyRightPanM span{

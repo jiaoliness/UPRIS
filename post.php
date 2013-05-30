@@ -58,7 +58,7 @@ $u=$_SESSION['risid'];
 	            <div id="agreement">
 					<textarea name="abs" placeholder="abstract" rows="5" cols="50"></textarea>       
                 </div>
-				<input type="hidden" name="userid" value="<?echo $u?>">
+				<input type="hidden" name="userid" value="<?php echo $u?>">
 				<input id = "reg" name="Submit" type="submit" value="Submit">
 			</div></div></div>
 			</form>
