@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<? require_once 'functions.php'; 
+<?php require_once 'functions.php'; 
 require_once 'login_class.php'; 
 require_once 'admin_class.php'; 
 require_once 'adviser_class.php';
@@ -31,7 +31,6 @@ while ($row = mysql_fetch_assoc($query2)) {
 ?>
 
 <div id="bodyPan">
-       <div id="bodyLeftPan"> 
    <div id="bookcatagories">
       <div id="nameonePan">
   
@@ -56,39 +55,39 @@ while ($row = mysql_fetch_assoc($query2)) {
       </div>
              <div id="discountonePan">
              <ul>
-        	   <li><label><?echo $row['title'];?> </label> 
-               	   </li>
-        	   <li><label><?echo $row['proponents'];?> </label> 
+        	   <li><label><?php 
+							echo $row['title'];?> 
+							</label></li>
+        	   <li><label><?php echo $row['proponents'];?> </label> 
        		   </li>
-       		   <li><label><?echo admin_class::display_field($row['field']);?></label>  
+       		   <li><label><?php echo admin_class::display_field($row['field']);?></label>  
         	   </li>
-        	   <li><label><?echo $row['duration'];?></label>  
+        	   <li><label><?php echo $row['duration'];?></label>  
         	   </li>
-                    <li><label><?echo number_format($row['budget']);?></label>  
+                    <li><label><?php echo number_format($row['budget']);?></label>  
         	   </li>
-                    <li><label><?echo date("l, M d, Y",strtotime($row['date']));?></label>  
+                    <li><label><?php echo date("l, M d, Y",strtotime($row['date']));?></label>  
         	   </li>
-                    <li><label><a href="<?echo $row['doc'];?>">View /</a></label>  
-        	  <label><a href="download.php?file=<?echo $row['doc'];?>">Download</a></label>  
+                    <li><label><a href="<?php echo $row['doc'];?>">View /</a></label>  
+        	  <label><a href="download.php?file=<?php echo $row['doc'];?>">Download</a></label>  
         	   </li>
                    
                             	         	 
         	</ul>
              </div> </div>
-<?    
+<?php   
     
     
 }}
 ?>
 
-             </div> 
         <h3>Assign Reviewers</h3>     
-       <form action="adviserview.php?pid=<?echo $articleid;?>" method="POST">    
- <?       adviser_class::view_reviewers($_SESSION['adviserid'],$articleid);    ?>
+       <form action="adviserview.php?pid=<?php echo $articleid;?>" method="POST">    
+ <?php      adviser_class::view_reviewers($_SESSION['adviserid'],$articleid);    ?>
             
       </form>
         <hr>     <h3>Already Assigned Reviewers</h3>    
-       <? adviser_class::assigned_reviewers($_SESSION['adviserid'],$articleid);   ?>
+       <?php adviser_class::assigned_reviewers($_SESSION['adviserid'],$articleid);   ?>
         
 
     

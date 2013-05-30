@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<? require_once 'functions.php'; 
+<?php require_once 'functions.php'; 
 require_once 'login_class.php'; 
 require_once 'admin_class.php'; 
 top("View"); 
@@ -42,26 +42,26 @@ while ($row = mysql_fetch_assoc($query2)) {
       </div>
              <div id="discountonePan">
              <ul>
-        	   <li><label><?echo $row['title'];?> </label> 
+        	   <li><label><?php echo $row['title'];?> </label> 
                	   </li>
-        	   <li><label><?echo $row['proponents'];?> </label> 
+        	   <li><label><?php echo $row['proponents'];?> </label> 
        		   </li>
-       		   <li><label><?echo admin_class::display_field($row['field']);?></label>  
+       		   <li><label><?php echo admin_class::display_field($row['field']);?></label>  
         	   </li>
-        	   <li><label><?echo $row['duration'];?></label>  
+        	   <li><label><?php echo $row['duration'];?></label>  
         	   </li>
-                    <li><label><?echo number_format($row['budget']);?></label>  
+                    <li><label><?php echo number_format($row['budget']);?></label>  
         	   </li>
-                    <li><label><?echo date("l, M d, Y",strtotime($row['date']));?></label>  
+                    <li><label><?php echo date("l, M d, Y",strtotime($row['date']));?></label>  
         	   </li>
                     
-                        <li><label><a href="download.php?file=<?echo $row['doc'];?>"><?echo $row['title'];?></a></label>  
+                        <li><label><a href="download.php?file=<?php echo $row['doc'];?>"><?php echo $row['title'];?></a></label>  
         	   </li>
                    
                             	         	 
         	</ul>
              </div> </div>
-<?    
+<?php    
     
     
 }}
@@ -76,6 +76,6 @@ while ($row = mysql_fetch_assoc($query2)) {
 
 
 
-<?
+<?php
 echo $bottom;
 ?>
