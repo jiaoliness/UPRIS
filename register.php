@@ -39,8 +39,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$type=$_POST['usertype'];
 	}
     ?> 
-
-	<h3>Sign-Up</h3>
+	
+	<h3>Sign-up Form</h3>
 	<form action="register.php" method="post"> 
 		<div id="nameonePan">
 			<ul>
@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 <li><input name="number" onkeyup="showHintNumber(this.value)" required="required"/><?if(isset($num)){echo "value=\"$num\"";}?></li> 
             </ul> </div>
 		
-    </form></div></div>
+    </div></div>
 		<div id="bodyRightPan2">
 			<h2><span>License Agreement</span></h2>
 				<div id="agreement">
@@ -101,7 +101,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		LIMIT OF LIABILITY: IN NO EVENT WILL ADOBE BE LIABLE TO YOU FOR ANY LOSS OF USE, INTERRUPTION OF BUSINESS, OR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND (INCLUDING LOST PROFITS) REGARDLESS OF THE FORM OF ACTION WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT LIABILITY OR OTHERWISE, EVEN IF ADOBE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. Some states or jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you.</textarea>       
                 
         <input id="reg" type="submit" value="Register!" /></div>
-		</div>
+		</div></form>
 <?php }?>
 
 <script src="register.js" type="text/javascript"></script>

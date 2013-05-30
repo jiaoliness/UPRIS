@@ -25,7 +25,7 @@ if(isset($_SESSION['risid'])){/*if user is loged in, displays his existing loans
         <a href="messages.php">View Messages</a>        
 	</div>   
     
-	<div id="welcome">
+	<div id="body">
     <h2>Logged in as <?php echo $_SESSION['name']; ?></h2>
 	<p>This is your profile page, click on a proposal title to view details</p>  
       <script src="jquery-1.9.1.js"></script>

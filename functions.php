@@ -58,13 +58,13 @@ function top($where){ echo " <head>
 	<div id=\"topMenuMiddlePan\">
             <ul>                
 		<li class=\"home\"> $where </li>
-		<li><a href=\"aboutus.php\">About us</a></li>
-		<li><a href=\"support.php\">Support</a></li>
+		<li><a href=\"index.php\">Home</a></li>
+		<li><a href=\"support.php\">Downloads</a></li>
 		<li><a href=\"grants.php\">Grants</a></li>
 		<li><a href=\"adviserprofile.php\">Adviser</a></li>
 		<li><a href=\"reviewerprofile.php\">Reviewer</a></li>            
-                <li><a href= \"profile.php\"> Researcher</a></li>
-		<li class=\"contact\"><a href=\"register.php\" class=\"contact\">Signup</a></li>
+        <li><a href= \"profile.php\"> Researcher</a></li>
+		<li class=\"signup\" ><a href= \"register.php\"> Signup</a> </li>
             </ul>
         </div>
 	<div id=\"topMenuRightPan\"></div>
@@ -77,7 +77,7 @@ $bottom= '<div id="footermainPan">
     <ul>
 	<li><a href="index.php">Home</a>| </li>
 	<li><a href="aboutus.php">About us</a>| </li>
-	<li><a href="support.php">Support</a>| </li>
+	<li><a href="support.php">Downloads</a>| </li>
 	<li><a href="#">Books</a>| </li>
 	<li><a href="http://crs.upv.edu.ph">University</a>| </li>
 	<li><a href="#">Blog</a>| </li>

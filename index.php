@@ -15,7 +15,6 @@ mail($to,$subject,$txt,$headers);*/
 ?> <!-- loads the site banner and navigation bar -->
 
 <div id="bodyPan">
-    
        <div id="bodyRightPan">
      <?php
  
@@ -30,37 +29,19 @@ mail($to,$subject,$txt,$headers);*/
         </div>	   
  <?php 
  
-       }else{ ?> <!--else if user is not logged in, displays the login now box-->
-  	<h2><span>Login</span> Form</h2>
-	<ul>
-	<form method="post" action="index.php">
-            <label for="email">Email:</label>
-            <input name="email" placeholder="Email" /> <br/>
-            <label for="password">Password:</label>
-            <input type="password" name="password" placeholder="Password"/>
-            <input type="submit" name="login" value="Login" />
-        </form>
-	</ul>         
-        <?php }
-
-if($_SERVER['REQUEST_METHOD']=='POST'){  login_class::login($_POST['email'],$_POST['password']); /*login function*/
- 
-    if(!login_class::is_logged_in()){
-           echo "<p id=\"loginerror\">&nbspWrong Email or Password!</p>"; /*unsecesfull login displays error message*/
-    }
- 
- }
- 
- 
+		}else{ ?> <!--else if user is not logged in, displays the login now box-->
+			<a href = "login.php">Login</a>
+			<a href = "register.php">Create new account</a>
+        <?php } 
  ?> 
-  </div>
-    <div id="body">
-        <h2> Announcements</h2><hr>
-        <?  admin_class::display_posts();?>
+  </div></div>
+    <div id="bodyy">
+        <h2> Announcements</h2>
+        <?php  admin_class::display_posts();?>
      
 	
   </div>
  
-</div>
+
 <?php
  echo $bottom; ?> <!--loads the footer pan-->

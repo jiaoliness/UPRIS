@@ -18,8 +18,12 @@ div, p, ul, h2, h3, img{
 	padding:0px; 
 	margin:0px;
 	}
+#log {
+	margin-top: 20px;
+	margin-left: -40px;
+}
 #loginerror{
-          text-align: center;
+          margin:130px 0 0 0px;
           color: red;       
         }
 #sucess{
@@ -64,14 +68,19 @@ padding-left:3px;
             
         }
 #wrap{
-	background: #ffffff; /* Set content background to white */
+	background: #ff; /* Set content background to white */
 	width: 625px; /* Set the width of our content area */
 	margin-left: 200px; /* Center our content in our browser */
-	/* Margin top to make some space between the header and the content */
-	padding: 0px; /* Padding to make some more space for our text */
+	padding: 50px 0 0px 0; /* Padding to make some more space for our text */
 	text-align: center; /* Center our content text */
-	
 	}
+#wrap h2, h3{
+	margin: 20px 0 20px 0px;
+	color: #cf1111;
+}
+#border1{
+	border: 2px solid #cf1111
+}
 #agreement textarea{
         width: 434px;
         height: 190px;
@@ -269,20 +278,23 @@ ul	{list-style-type:none;}
 #bodyPan{
 	width:90%; 
 	position:relative; 
-	margin:0 auto; 
-	padding:10px 0 0;
+	margin:10px 0 0 0px; 
+	padding:10px 0 0 50px;
      
 	}
 
 #bodyLeftPan{
-	width:76%; 
-	float:left; 
+	width:100%; 
+	margin: 0 0 0 90px;
 	
 	}
-#body{
-	width: 76%;
-	margin: 0 0 0 90px;
+#bodyy{
+	width: 80%;
+	margin: 10px 0px 0 50px;
 }	
+#bodyy h2{
+	margin-right: 10px;
+}
 #bodyLeftPan h2{
 	width:auto; 
 		
@@ -291,7 +303,7 @@ ul	{list-style-type:none;}
 	}
         
 #bodyLeftPan #welcome {
-        width:410px; 
+    width:410px; 
 	height:auto; 
 	background:white; 
 	color:#CF1111; 
@@ -363,7 +375,8 @@ ul	{list-style-type:none;}
         color: #444;
         display: block;
         padding: 7px 15px;
-        text-decoration: none;
+		text-decoration: none;
+        text-align: center;
 }
 	
 #bodyRightPan a:hover{
@@ -451,8 +464,7 @@ ul	{list-style-type:none;}
 	float:left; 
 	margin:0 auto; 
 	padding:5px 0 0;
-	}
-	
+	}	
 #namePan{
 	width:167px; 
 	float:left;  
@@ -461,11 +473,20 @@ ul	{list-style-type:none;}
 	text-transform:uppercase;
 	}
 	
-#nameonePan{
-	width:167px; 
-	margin-left: 130px;
+#nameonePan1{
+	width:75px; 
+	margin-left:200px;
 	float:left;
 	}
+
+#nameonePan1 ul li {
+	margin: 5px 0 0 0px;
+}
+#nameonePan{
+	width:167px; 
+	margin-left: 30px;
+	float:left;
+}
 	
 #nameonePan ul {width:167px;}
 #nameonePan ul li{
@@ -475,15 +496,13 @@ ul	{list-style-type:none;}
 	padding-left: 10px;
 	}
 
-	
-
 #pricePan{
 	width:106px; 
 	float:left;  
 	color:#4F4F4F; 
 	font-size:14px;
 	 text-transform:uppercase;
-	 }
+	}
 	 
 #priceonePan {width:143px; float:left;}
 
@@ -588,7 +607,7 @@ body h1{
         
 #bodyRightPan2{
 	width:235px; 
-	margin: 0 0 0 275px; 
+	margin: 0 0 0 80px; 
 	padding:0 0 28px;
 	}           
 #bodyRightPan h2{

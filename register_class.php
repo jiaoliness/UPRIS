@@ -76,12 +76,16 @@ else if($usertype=='reviewer'){
 else if($usertype=='adviser'){
     $table='adviserinfo';
 }
+/*
 $msg = 'Your account has been made. Please verify it by clicking the activation link that has been sent to your email.';		
 echo $msg;
 $hash = md5( rand(0,1000) ); // Generate random 32 character hash and assign it to a local variable.
-
-mysql_query("INSERT INTO $table VALUES(0,'$email','$firstname','$lastname',MD5('$password'),'$field','$institute','$hash',0)") or die("Error in register:".mysql_error());	
-$to      = $email; //Send email to our user
+*/
+mysql_query("INSERT INTO $table VALUES(0,'$email','$firstname','$lastname','$password','$field','$institute',0)") or die("Error in register:".mysql_error());	
+logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
+sleep(1);
+login_class::login($email,$password);
+/*$to      = $email; //Send email to our user
 $subject = 'Signup | Verification'; //// Give the email a subject 
 $message = '
 			Thanks for signing up!
@@ -101,8 +105,8 @@ $message = '
 			else{
 				echo "Message sending failed.";
 			}
+*/
 
-sleep(1);
 }  
     
  public static function same_email($email,$table){
