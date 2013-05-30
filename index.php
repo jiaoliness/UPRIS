@@ -21,7 +21,7 @@ mail($to,$subject,$txt,$headers);*/
         if(isset($_SESSION['risid']) or isset($_SESSION['adminid'])or isset($_SESSION['reviewerid'])or isset($_SESSION['adviserid'])){ /*if user is logged in, displays welome (name) */
     ?>
         <div><h2 id="welcome"><span>Welcome! <br/></span></h2> <?php echo "<h2>".$_SESSION['name']."</h2>";?>
-	<p id="index">View your <a href= <?php if(isset($_SESSION['risid'])){ echo "\"profile.php\"  ><span>Proponent Profile!</span> ";} 
+	<p id="index">View your <a href= <?php if(isset($_SESSION['risid'])){ echo "\"profile.php\"  ><span>Researcher Profile!</span> ";} 
                         else if (isset($_SESSION['adminid'])){ echo "\"adminindex.php\"><span>Admin Page!</span>  "; } 
                         else if (isset($_SESSION['reviewerid'])){ echo "\"reviewerprofile.php\"><span>Reviewer Profile!</span>  "; } 
                         else if (isset($_SESSION['adviserid'])){ echo "\"adviserprofile.php\"><span>Adviser Profile!</span>  "; } 

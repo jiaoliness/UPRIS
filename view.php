@@ -65,13 +65,7 @@ while ($row = mysql_fetch_assoc($query2)) {
     
     
 }}
-?>
-
-           
-           
-           
-           
-           </div>
+?> </div>
 </div>
 
 

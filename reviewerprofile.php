@@ -16,49 +16,39 @@ if(isset($_SESSION['reviewerid'])){/*if user is loged in, displays his existing 
     
 ?>
 <div id="bodyPan">
-    
-    
-       <div id="bodyRightPan">
+    <div id="bodyRightPan">
               
-  	<h2><span>profile</span> actions</h2>        
+  	<h2><span>Profile</span> Actions</h2>        
    
         <a href="logout.php">Logout</a>
-       <a href="">function</a>
+       <a href="">Function</a>
            
   </div>   
     
   <div id="bodyLeftPan">
     <h2 id="welcome"><span>Logged in as </span><?php echo $_SESSION['name']; ?></h2>
-	<p>This is your reviewer profile page, click on a proposal title to view details</p>  
-
-               <script src="jquery-1.9.1.js"></script>
-      <script src="jquery-ui-1.10.3.custom.js"></script>    
- 
-        <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
-  </script>
+	<p>This is your reviewer profile page, click on a proposal title to view details</p>
+	
+		<script src="jquery-1.9.1.js"></script>
+		<script src="jquery-ui-1.10.3.custom.js"></script>    
+		<script>
+			$(function() {
+				$( "#tabs" ).tabs();
+			});
+		</script></div></div>  
   
-  <div id="tabs">
-       <ul>
-    <li><a href="#tabs-1">New</a></li>
-    <li><a href="#tabs-2">Pending</a></li>
-    <li><a href="#tabs-3">Approved</a></li>
-    <li><a href="#tabs-4">Declined</a></li>
-  </ul>
-
-<div id="tabs-1"> <?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'new'");?></div>
-<div id="tabs-2"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'pending'")?></div> 
-<div id="tabs-3"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'approved'")?></div>
-<div id="tabs-4"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'declined'")?></div>
- 
-  </div>  
-        
-        
-        
-  </div>  
-       
+	<div id="tabs">
+		<ul class="nav nav-pills">
+			<li><a href="#tabs-1">New</a></li>
+			<li><a href="#tabs-2">Pending</a></li>
+			<li><a href="#tabs-3">Approved</a></li>
+			<li><a href="#tabs-4">Declined</a></li>
+		</ul>
+		
+		<div id="tabs-1"> <?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'new'");?></div>
+		<div id="tabs-2"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'pending'")?></div> 
+		<div id="tabs-3"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'approved'")?></div>
+		<div id="tabs-4"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'declined'")?></div>
 <?php }else{  ?>
     <h1> You are not logged in as a reviewer</h1> <!--displays a login box if user is not logged in-->
      <div id="bodyRightPan3">

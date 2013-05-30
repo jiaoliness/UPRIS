@@ -53,27 +53,7 @@ if(isset($_SESSION['adviserid'])){
 <div id="tabs-3"><?php adviser_class::view_proposals($_SESSION['adviserid'],"'approved'")?></div>
 <div id="tabs-4"><?php adviser_class::view_proposals($_SESSION['adviserid'],"'declined'")?></div>
  
-  </div>  
-        
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-  </div>  
+  </div></div>  
        
 <?php }else{  ?>
     <h1> You are not logged in as an adviser</h1> <!--displays a login box if user is not logged in-->

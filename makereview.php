@@ -39,7 +39,7 @@ else{
  
  
  ?>
-<form action="makereview.php?rid=<?echo $rid;?>&pid=<?echo $pid;?>" method="POST">
+<form action="makereview.php?rid=<?php echo $rid;?>&pid=<?php echo $pid;?>" method="POST">
     
   <p><span>Please download first the Criteria for evaluating this proposal <a href="download.php?file=./docs/CriteriaForR&DProposals&Form.pdf">here</a>.</span></p>   
 <label for="1rate">1.</label>

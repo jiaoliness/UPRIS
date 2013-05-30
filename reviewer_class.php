@@ -19,17 +19,15 @@ public static function view_proposals($id,$status){
 
         $res=mysql_query("SELECT proposalid from reviews where reviewerid=$id") or die(mysql_error());
         if(mysql_num_rows($res)){
+		echo '<table class="table table-stripped" border="1">';
+		echo "<tr><th>ID</th><th>Title</th><th>Date Submitted</th><th>Status</th>";
+		if($status!="'approved'" AND $status!="'declined'"){echo "<th>Approve</th></tr>";}  
         while($row2 = mysql_fetch_assoc($res)){
         $pid=$row2['proposalid'];
         $result=mysql_query("SELECT * from proposals where proposalid=$pid and status=$status") or die(mysql_error());
         
         if(mysql_num_rows($result)){  
-        
-        echo '<table border="1">';    
- echo "<tr>
-<th>ID</th><th>Title</th><th>Date Submitted</th><th>Status</th>";
- if($status!="'approved'" AND $status!="'declined'"){
- echo "<th>Approve</th></tr>";}
+ 
         
        while ($row = mysql_fetch_assoc($result)) {   
            $pid=$row['proposalid'];
@@ -45,9 +43,11 @@ if($status!="'approved'" AND $status!="'declined'"){echo "<td>"."<a href=\"guide
 else {}
 echo "</tr>";
 }
-echo '</table>';
+
+    }}
+		echo '</table>';
         
-    }}}}
+	}}
     
 public static function post_review($pid,$rid,$oner,$onec,$twor,$twoc,$threer,$threec,$fourr,$fourc,$fiver,$fivec,$sixr,$sixc,$sevenr,$sevenc,$eightr,$eightc,$overall){
     mysql_query("INSERT into reviewed VALUES(0,'$pid','$rid','$oner','$onec','$twor','$twoc','$threer','$threec','$fourr','$fourc','$fiver','$fivec','$sixr','$sixc','$sevenr','$sevenc','$eightr','$eightc','$overall')") or die(mysql_error());
