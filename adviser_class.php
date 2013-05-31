@@ -16,8 +16,10 @@
     public static function view_proposals($id,$status){
         $result=mysql_query("SELECT * from proposals WHERE status=$status") or die(mysql_error());
 		if(mysql_num_rows($result)){  
-			echo '<table border="1">';    
-			echo "<tr><th>ID</th><th>Title</th><th>Date Submitted</th><th>Status</th><th>Approve</th></tr>";
+			echo '<table class="table table-stripped" border="1">';    
+			echo "<tr><th>ID</th><th>Title</th><th>Date Submitted</th><th>Status</th>";
+			if($status!="'approved'" AND $status!="'declined'"){echo "<th>Approve</th>";}
+			echo '</tr>';
         while ($row = mysql_fetch_assoc($result)) {   
 			$pid=$row['proposalid'];
 			echo " <tr> <td>".$pid."</td>";
@@ -30,7 +32,7 @@
 			echo $row['proposalid']."\">".$row['title']."</a></td>";
 			echo "<td>".date("l, M d, Y",strtotime($row['date']))."</td>";
 			echo "<td>".$row['status']."</td>";
-			if($status!="'approved'"){
+			if($status!="'approved'" AND $status!="'declined'"){
 				echo "<td>"."<a href=\"approveproposal.php?pid=$pid\">"."Approve"."</a></td>";
 			}else{}
 			echo "</tr>";
@@ -44,7 +46,8 @@
     }
     
     public static function view_reviewers($aid,$pid){
-		$result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid) and active=1") or die(mysql_error());  
+		//$result= mysql_query("SELECT * from reviewerinfo WHERE field=(SELECT field from adviserinfo WHERE `adviserid`=$aid) and active=1") or die(mysql_error()); 
+		$result= mysql_query("SELECT * from reviewerinfo WHERE active=1") or die(mysql_error()); 
 		$count=0;
 		while( $row=  mysql_fetch_assoc($result)){
 			$rid=$row['reviewerid'];

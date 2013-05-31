@@ -69,7 +69,7 @@ padding-left:3px;
         }
 #wrap{
 	background: #ff; /* Set content background to white */
-	width: 625px; /* Set the width of our content area */
+	width: 500px; /* Set the width of our content area */
 	margin-left: 200px; /* Center our content in our browser */
 	padding: 50px 0 0px 0; /* Padding to make some more space for our text */
 	text-align: center; /* Center our content text */
@@ -130,8 +130,8 @@ ul	{list-style-type:none;}
 	height:158px; 
 	position:relative;
 	margin:0 auto; 
-	background:url(images/topPan-bg.png) 0 0 repeat-x #15AEFD; 
-	color:white;
+	/*background:url(images/topPan-bg.png) 0 0 repeat-x #15AEFD; 
+	*/color:white;
 	padding:0px;
 	}
 	
@@ -183,7 +183,7 @@ ul	{list-style-type:none;}
 	}
 
 #topMenuPan{
-	width:683px;
+	width:6px;
 	height:16px; 
 	position:absolute; 
 	bottom:9px; 
@@ -192,9 +192,9 @@ ul	{list-style-type:none;}
 	
 #topMenuLeftPan{
 	width:69px;
+	margin-left: 10px;
 	height:16px; 
-	float:left; 
-	background:url(images/menu-leftbg.gif) 0 0 no-repeat;
+	float:center; 
 	}
 	
 #topMenuMiddlePan{
@@ -375,7 +375,7 @@ ul	{list-style-type:none;}
         border-bottom: 1px solid #CCC;
         color: #444;
         display: block;
-        padding: 7px 15px;
+       r padding: 7px 15px;
 		text-decoration: none;
         text-align: center;
 }
@@ -489,7 +489,7 @@ ul	{list-style-type:none;}
 	float:left;
 }
 	
-#nameonePan ul {width:167px;}
+#nameonePan ul {width:157px;}
 #nameonePan ul li{
 	float:left;
 	height:20px; 
@@ -689,7 +689,7 @@ body h1{
 
 #bodyRightPan ul{
 	width:180px; 
-	margin:0 0 17px 29px;
+	margin:17px 0 17px 29px;
 	}
 	
 #bodyRightPan ul li{

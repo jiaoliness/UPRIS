@@ -45,7 +45,7 @@ if(isset($_SESSION['reviewerid'])){/*if user is loged in, displays his existing 
 			<li><a href="#tabs-4">Declined</a></li>
 		</ul>
 		
-		<div id="tabs-1"> <?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'new'");?></div>
+		<div id="tabs-1"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'new'");?></div>
 		<div id="tabs-2"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'pending'")?></div> 
 		<div id="tabs-3"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'approved'")?></div>
 		<div id="tabs-4"><?php reviewer_class::view_proposals($_SESSION['reviewerid'],"'declined'")?></div>
