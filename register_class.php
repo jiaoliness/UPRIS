@@ -68,23 +68,29 @@ $regno = filter_var($r,FILTER_VALIDATE_INT);
   }
   
 if($usertype=='user'){
-    $table='userinfo';
+    mysql_query("INSERT INTO `userinfo`(`userid`, `email`, `firstname`, `lastname`, `password`, `field`, `ins`, `active`) VALUES(0,'$email','$firstname','$lastname','$password','$field','$institute',0)") or die("Error in register:".mysql_error()); 
+    logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
+    //sleep(1);
+    login_class::login($email,$password);
 }
 else if($usertype=='reviewer'){
-    $table='reviewerinfo';
+    mysql_query("INSERT INTO 'reviewerinfo' VALUES(0,'$email','$firstname','$lastname','$password','$field','$institute',0)") or die("Error in register:".mysql_error()); 
+    logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
+    //sleep(1);
+    login_class::login($email,$password);
 }
 else if($usertype=='adviser'){
-    $table='adviserinfo';
+    mysql_query("INSERT INTO 'adviserinfo' VALUES(0,'$email','$firstname','$lastname','$password','$field','$institute',0)") or die("Error in register:".mysql_error()); 
+    logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
+    //sleep(1);
+    login_class::login($email,$password);
 }
 /*
 $msg = 'Your account has been made. Please verify it by clicking the activation link that has been sent to your email.';		
 echo $msg;
 $hash = md5( rand(0,1000) ); // Generate random 32 character hash and assign it to a local variable.
 */
-mysql_query("INSERT INTO $table VALUES(0,'$email','$firstname','$lastname','$password','$field','$institute',0)") or die("Error in register:".mysql_error());	
-logdata( " Type: ".$usertype." registered - Name: ".$firstname." ".$lastname." Email: ".$email." Field: ".$field,null);
-sleep(1);
-login_class::login($email,$password);
+
 /*$to      = $email; //Send email to our user
 $subject = 'Signup | Verification'; //// Give the email a subject 
 $message = '

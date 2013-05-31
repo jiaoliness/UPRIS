@@ -30,8 +30,9 @@ mail($to,$subject,$txt,$headers);*/
  <?php 
  
 		}else{ ?> <!--else if user is not logged in, displays the login now box-->
-			<a href = "login.php">Login</a>
-			<a href = "register.php">Create new account</a>
+			<ul class= "nav nav-pills nav-stacked">
+			<a class="btn" href = "login.php">Login</a>
+			<a class="btn" href = "register.php">Create new account</a></ul>
         <?php } 
  ?> 
   </div></div>

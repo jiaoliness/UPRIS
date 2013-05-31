@@ -23,7 +23,7 @@ if(isset($_SESSION['adviserid'])){
   	<h2><span>profile</span> actions</h2>        
    
         <a href="logout.php">Logout</a>
-     <a href="">function</a>
+     <a href="">Function</a>
           <a href="messages.php">View Messages</a>    
   </div>   
     
@@ -41,7 +41,7 @@ if(isset($_SESSION['adviserid'])){
   </script>
   
   <div id="tabs">
-       <ul>
+  <ul class="nav nav-pills">
     <li><a href="#tabs-1">New</a></li>
     <li><a href="#tabs-2">Pending</a></li>
     <li><a href="#tabs-3">Approved</a></li>

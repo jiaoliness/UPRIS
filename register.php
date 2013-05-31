@@ -14,6 +14,7 @@ top("sign-up"); ?>
     ?>  
   
         <h1><span>Please Logout your current account to register!</span></h1>
+		<a class="btn" href="logout.php">Click here to logout</a>
 	</div>
 	<?php  
      } else{
@@ -21,7 +22,6 @@ top("sign-up"); ?>
 	
 	<?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
-          
     register_class::register($_POST['usertype'],trim($_POST['firstname']), /*register function, with parameters from submitted form*/
     trim($_POST['lastname']),  trim($_POST['email']),
     trim($_POST['password']), trim($_POST['password2']),
@@ -41,11 +41,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     ?> 
 	
 	<h3>Sign-up Form</h3>
-	<form action="register.php" method="post"> 
+	<form class="form-horizontal" action="register.php" method="post"> 
 		<div id="nameonePan">
 			<ul>
 				<li><label for="usertype">What are you?</label> </li>
-				<li> <label for="firstname">First Name:</label> <span id="txtHintF"></span></li>
+				<li> <label for="firstname">First Name: </label> <span id="txtHintF"></span></li>
 				<li><label for="lastname">Last Name:   </label> <span id="txtHintL"></span></li>
 				<li><label for="email">Email Address:</label>  <span id="txtHintE"></span></li>
 				<li><label for="password">Password:</label>  <span id="txtHintP"></span></li>
@@ -57,17 +57,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		</div>
 		<div id = "discountonePan">
             <ul> 
-                <li><select name="usertype">
+                <li><select name="usertype" class="span2">
 					<option name="usertype" value="user" <?php if(isset($type)){echo $type=="user"? 'selected="selected"' : ""; }?>>Researcher</option>
 					<option name="usertype" value="reviewer" <?php if(isset($type)){echo $type=="reviewer"? 'selected="selected"' : ""; }?>>Reviewer</option> 
 					<option name="usertype" value="adviser" <?php if(isset($type)){echo $type=="adviser"? 'selected="selected"' : ""; }?>>Adviser</option> 
 				</select></li>
-                <li><input name="firstname" onkeyup="showHintFirst(this.value)" required="required" /><?if(isset($fname)){echo "value=\"$fname\"";}else{echo "autofocus=\"autofocus\"";}?> </li> 
-                <li><input name="lastname" onkeyup="showHintLast(this.value)" required="required"/><?if(isset($lname)){echo "value=\"$lname\"";}?></li>
-                <li><input type="email" onkeyup="showHintEmail(this.value)" name="email" required="required"/><?if(isset($mail)){echo "value=\"$mail\"";}?> </li>
-                <li><input type="password" onkeyup="showHintPassword(this.value)" name="password" required="required"/><?if(isset($pass)){echo "value=\"$pass\"";}?></li>
-                <li><input type="password"  name="password2" required="required"/></li>
-                <li><select name="field">
+                <li><input type="text" class="span2" name="firstname" onkeyup="showHintFirst(this.value)" required="required" /><?if(isset($fname)){echo "value=\"$fname\"";}else{echo "autofocus=\"autofocus\"";}?> </li> 
+                <li><input type="text" class="span2" name="lastname" onkeyup="showHintLast(this.value)" required="required"/><?if(isset($lname)){echo "value=\"$lname\"";}?></li>
+                <li><input type="text" class="span2" type="email" onkeyup="showHintEmail(this.value)" name="email" required="required"/><?if(isset($mail)){echo "value=\"$mail\"";}?> </li>
+                <li><input type="password" class="span2" onkeyup="showHintPassword(this.value)" name="password" required="required"/><?if(isset($pass)){echo "value=\"$pass\"";}?></li>
+                <li><input  type="password"  class="span2" name="password2" required="required"/></li>
+                <li><select name="field" class="span2">
 					<option name="field" value="agr" <?php if(isset($dbValue)){echo $dbValue=="agr"? 'selected="selected"' : ""; }?>>Agriculture</option> 
 					<option name="field" value="arch" <?php  if(isset($dbValue)){echo $dbValue=="arch"? 'selected="selected"' : "";} ?>> Architecture</option>
 					<option name="field" value="bio" <?php if(isset($dbValue)){echo $dbValue=="bio"? 'selected="selected"' : ""; }?>>Biology</option>
@@ -80,11 +80,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 					<option name="field" value="envs" <?php if(isset($dbValue)){echo $dbValue==""? 'selected="selected"' : ""; }?>>Environmental Science</option> 
 					<option name="field" value="ch" <?php if(isset($dbValue)){echo $dbValue==""? 'selected="selected"' : ""; }?>>Chemistry</option> 
                 </select></li>
-                <li><input name="ins" onkeyup="showHintIns(this.value)" required="required"/><?if(isset($lname)){echo "value=\"$ins\"";}?></li>
-                <li><input name="number" onkeyup="showHintNumber(this.value)" required="required"/><?if(isset($num)){echo "value=\"$num\"";}?></li> 
+                <li><input type="text" class="span2" name="ins" onkeyup="showHintIns(this.value)" required="required"/><?if(isset($lname)){echo "value=\"$ins\"";}?></li>
+                <li><input type="text" class="span2" name="number" onkeyup="showHintNumber(this.value)" required="required"/><?if(isset($num)){echo "value=\"$num\"";}?></li> 
             </ul> </div>
 		
-    </div></div>
+    </div>
 		<div id="bodyRightPan2">
 			<h2><span>License Agreement</span></h2>
 				<div id="agreement">
@@ -99,8 +99,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		DISCLAIMER OF WARRANTIES: YOU AGREE THAT ADOBE HAS MADE NO EXPRESS WARRANTIES TO YOU REGARDING THE SOFTWARE AND THAT THE SOFTWARE IS BEING PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND. ADOBE DISCLAIMS ALL WARRANTIES WITH REGARD TO THE SOFTWARE, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, MERCHANTABLE QUALITY, OR NONINFRINGEMENT OF THIRD-PARTY RIGHTS. Some states or jurisdictions do not allow the exclusion of implied warranties, so the above limitations may not apply to you.
 
 		LIMIT OF LIABILITY: IN NO EVENT WILL ADOBE BE LIABLE TO YOU FOR ANY LOSS OF USE, INTERRUPTION OF BUSINESS, OR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND (INCLUDING LOST PROFITS) REGARDLESS OF THE FORM OF ACTION WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT LIABILITY OR OTHERWISE, EVEN IF ADOBE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. Some states or jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you.</textarea>       
-                
-        <input id="reg" type="submit" value="Register!" /></div>
+		<button class="btn" type="submit">Submit</button>       
+       </div>
 		</div></form>
 <?php }?>
 
