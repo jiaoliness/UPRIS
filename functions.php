@@ -56,23 +56,26 @@ function top($where){ echo " <head>
     <div id=\"headerimg\"><a href=\"index.php\"><img id=\"hdimg\" src=\"images/yab.png\" position=\"absolute\"></a></div>
     </head>
     <body>
-	
     <div id=\"topPan\">
 			
     <div id=\"topContactPan\">
     </div>
         <div id=\"topMenuPan\">
-            <ul>   
-		<div class = \"btn-group\" >
-		<button class=\"btn\"><a href=\"index.php\">Home</a></button>
-		<button class=\"btn\"><a href=\"support.php\">Downloads</a></button>
-		<button class=\"btn\"><a href=\"grants.php\">Grants</a></button>
-		<button class=\"btn\"><a href=\"adviserprofile.php\">Adviser</a></button>
-		<button class=\"btn\"><a href=\"reviewerprofile.php\">Reviewer</a></button>            
-        <button class=\"btn\"><a href= \"profile.php\"> Researcher</a></button>
-		<button class=\"btn\" ><a href= \"register.php\"> Signup</a></button>
+	<div id=\"topMenuLeftPan\"></div>
+	<div id=\"topMenuMiddlePan\">
+            <ul>                
+		<li class=\"home\"> $where </li>
+		<li><a href=\"index.php\">Home</a></li>
+		<li><a href=\"support.php\">Downloads</a></li>
+		<li><a href=\"grants.php\">Grants</a></li>
+		<li><a href=\"adviserprofile.php\">Adviser</a></li>
+		<li><a href=\"reviewerprofile.php\">Reviewer</a></li>            
+        <li><a href= \"profile.php\"> Researcher</a></li>
+		<li class=\"signup\" ><a href= \"register.php\"> Signup</a> </li>
             </ul>
-         </div>
+        </div>
+	<div id=\"topMenuRightPan\"></div>
+        </div>
         </div> "    ;}
 
 /*the bottom pane or footer*/

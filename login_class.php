@@ -18,7 +18,7 @@ class login_class {
  
 public static function login($email,$password){ /*function to login*/
   
-$result =mysql_query("SELECT userid,firstname,lastname,email FROM userinfo WHERE email='$email' AND password='$password'")or die(mysql_error());
+$result =mysql_query("SELECT userid,firstname,lastname,email FROM userinfo WHERE email='$email' AND password=MD5('$password')")or die(mysql_error());
 $result2=mysql_query("SELECT adminid,firstname,lastname,email FROM admininfo WHERE email='$email' AND password='$password'") or die(mysql_error());
 $result3=mysql_query("SELECT reviewerid,firstname,lastname,email FROM reviewerinfo WHERE email='$email' AND password='$password'") or die(mysql_error()); 
 $result4=mysql_query("SELECT adviserid,firstname,lastname,email FROM adviserinfo WHERE email='$email' AND password='$password'") or die(mysql_error());
@@ -57,6 +57,7 @@ else if (mysql_num_rows($result4) == 1){ /*if the user is an adviser, sets the S
 
 
 else{
+          
           return false; /*for TDD test purposes, indicator of unsucesful login*/
 }
 }
@@ -132,5 +133,7 @@ public static function is_adviser(){
 }
     
 }
+
+
 
 ?>

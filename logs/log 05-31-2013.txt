@@ -1,6 +1,0 @@
-New user Type: user registered - Name: Fname Lname Email: email@yahoo.com Field: agr at 1:43 PM
-New user Type: user registered - Name: Fname Lname Email: email@yahoo.com Field: agr at 1:46 PM
-New user Type: user registered - Name: Fname Lname Email: email@yahoo.com Field: agr at 1:49 PM
-New user Type: user registered - Name: Fname Lname Email: email1@yahoo.com Field: agr at 1:52 PM
-New user Type: user registered - Name: Fname Lname Email: email2@yahoo.com Field: agr at 1:53 PM
-New user Type: user registered - Name: Jen Aguilar Email: jenny@gmail.com Field: cmsc at 3:59 PM

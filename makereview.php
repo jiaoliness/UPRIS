@@ -41,8 +41,8 @@ else{
  ?>
 <form action="makereview.php?rid=<?php echo $rid;?>&pid=<?php echo $pid;?>" method="POST">
     
-<p><span>Please download first the Criteria for evaluating this proposal <a href="download.php?file=./docs/CriteriaForR&DProposals&Form.pdf">here</a>.</span></p>   
-<label for="1rate">1. Uniqueness</label>
+  <p><span>Please download first the Criteria for evaluating this proposal <a href="download.php?file=./docs/CriteriaForR&DProposals&Form.pdf">here</a>.</span></p>   
+<label for="1rate">1.</label>
 <select name="1rate" required="required">
 <option name="1rate" value="1">1</option> 
 <option name="1rate" value="2">2</option>
@@ -54,7 +54,7 @@ else{
 
 
 
-<label for="2rate">2. Relevance</label>
+<label for="2rate">2.</label>
 <select name="2rate" required="required">
 <option name="2rate" value="1">1</option> 
 <option name="2rate" value="2">2</option>

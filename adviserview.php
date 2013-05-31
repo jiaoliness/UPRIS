@@ -36,37 +36,40 @@ while ($row = mysql_fetch_assoc($query2)) {
   
         	<ul>
         	   <li><label>Project Title:   </label> 
-             </li>
-        	   <li><label>Proponents:    </label> 
+               	   </li>
+        	   <li><label>Proponents:   </label> 
        		   </li>
-       		   <li><label>Field of study:    </label>  
+       		   <li><label>Field of study:</label>  
         	   </li>
-        	   <li><label>Duration of study:   </label>  
+        	   <li><label>Duration of study:</label>  
         	   </li>
-             <li><label>Expected budget:    </label>  
+                    <li><label>Expected budget:</label>  
         	   </li>
-             <li><label>Date Submitted:   </label>  
+                    <li><label>Date Submitted:</label>  
         	   </li>
-             <li><label>Attached Document:    </label>  
-        	   </li>           	        	 
+                   
+                    <li><label>Attached Document:</label>  
+        	   </li>
+                           	        	 
         	</ul>
       </div>
              <div id="discountonePan">
              <ul>
-        	   <li><label><?php echo $row['title'];?> </label>
-             </li>
+        	   <li><label><?php 
+							echo $row['title'];?> 
+							</label></li>
         	   <li><label><?php echo $row['proponents'];?> </label> 
        		   </li>
        		   <li><label><?php echo admin_class::display_field($row['field']);?></label>  
         	   </li>
         	   <li><label><?php echo $row['duration'];?></label>  
         	   </li>
-             <li><label><?php echo number_format($row['budget']);?></label>  
+                    <li><label><?php echo number_format($row['budget']);?></label>  
         	   </li>
-             <li><label><?php echo date("l, M d, Y",strtotime($row['date']));?></label>  
+                    <li><label><?php echo date("l, M d, Y",strtotime($row['date']));?></label>  
         	   </li>
-             <li><label><a href="<?php echo $row['doc'];?>">View /</a></label>  
-        	   <label><a href="download.php?file=<?php echo $row['doc'];?>">Download</a></label>  
+                    <li><label><a href="<?php echo $row['doc'];?>">View /</a></label>  
+        	  <label><a href="download.php?file=<?php echo $row['doc'];?>">Download</a></label>  
         	   </li>
                    
                             	         	 
@@ -86,6 +89,8 @@ while ($row = mysql_fetch_assoc($query2)) {
         <hr>     <h3>Already Assigned Reviewers</h3>    
        <?php adviser_class::assigned_reviewers($_SESSION['adviserid'],$articleid);   ?>
         
+
+    
 </div>
 
 
